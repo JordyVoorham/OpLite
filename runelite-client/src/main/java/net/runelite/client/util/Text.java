@@ -42,7 +42,7 @@ public class Text
 {
 	private static final JaroWinklerDistance DISTANCE = new JaroWinklerDistance();
 	private static final Pattern TAG_REGEXP = Pattern.compile("<[^>]*>");
-	private static final Splitter COMMA_SPLITTER = Splitter
+	public static final Splitter COMMA_SPLITTER = Splitter
 		.on(",")
 		.omitEmptyStrings()
 		.trimResults();
