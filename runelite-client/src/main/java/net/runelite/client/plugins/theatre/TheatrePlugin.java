@@ -39,8 +39,8 @@ import net.runelite.client.plugins.theatre.Verzik.Verzik;
 import net.runelite.client.plugins.theatre.Xarpus.Xarpus;
 
 @PluginDescriptor(
-		name = "Theatre of Blood",
-		description = "QOL for Theatre of Blood"
+		name = "!Theatre of Blood",
+		description = "Helper for Theatre of Blood"
 )
 public class TheatrePlugin extends Plugin
 {
