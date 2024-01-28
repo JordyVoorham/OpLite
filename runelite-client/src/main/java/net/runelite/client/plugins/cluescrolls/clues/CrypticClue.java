@@ -437,6 +437,7 @@ public class CrypticClue extends ClueScroll implements NpcClueScroll, ObjectClue
 			.location(new WorldPoint(3116, 9562, 0))
 			.npc("Wizard")
 			.npcRegion(12337)
+			.npcRegion(12437)
 			.objectId(ObjectID.DRAWERS_350)
 			.solution("Search the drawers in the basement of the Wizard's Tower south of Draynor Village. Kill one of the Wizards for the key. Fairy ring DIS.")
 			.build(),
@@ -1169,7 +1170,7 @@ public class CrypticClue extends ClueScroll implements NpcClueScroll, ObjectClue
 			.solution("Kill a Bloodveld.")
 			.build(),
 		CrypticClue.builder()
-			.text("She's small but can build both literally and figuratively, as long as you have their favour.")
+			.text("She's small but can build both literally and figuratively.")
 			.location(new WorldPoint(1486, 3834, 0))
 			.npc("Lovada")
 			.solution("Speak to Lovada by the entrance to the blast mine in Lovakengj.")
