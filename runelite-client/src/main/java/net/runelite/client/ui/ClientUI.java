@@ -85,6 +85,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
@@ -648,24 +649,21 @@ public class ClientUI
 						frame.setLocationRelativeTo(frame.getOwner());
 					}
 				}
-				else
-				{
-					frame.setLocationRelativeTo(frame.getOwner());
-				}
 
 				if (configManager.getConfiguration(CONFIG_GROUP, CONFIG_CLIENT_MAXIMIZED) != null)
 				{
 					frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+					// According to the documentation of JFrame#setExtendedState, if the frame isn't visible, a window
+					// state change event isn't guaranteed to be fired. Since RuneLite's custom chrome borders rely on a
+					// state change listener, borders need to be applied manually when maximizing prior to setVisible
+					applyCustomChromeBorder();
 				}
-			}
-			else
-			{
-				frame.setLocationRelativeTo(frame.getOwner());
 			}
 
 			if (!appliedSize)
 			{
 				applyGameSize(true);
+				frame.setLocationRelativeTo(frame.getOwner());
 			}
 
 			// Show frame
@@ -683,10 +681,21 @@ public class ClientUI
 		// Show out of date dialog if needed
 		if (client != null && !(client instanceof Client))
 		{
-			SwingUtilities.invokeLater(() -> JOptionPane.showMessageDialog(frame,
-				"RuneLite has not yet been updated to work with the latest\n"
-					+ "game update, it will work with reduced functionality until then.",
-				"RuneLite is outdated", INFORMATION_MESSAGE));
+			if (!Strings.isNullOrEmpty(RuneLiteProperties.getLauncherVersion()))
+			{
+				SwingUtilities.invokeLater(() -> JOptionPane.showMessageDialog(frame,
+					"RuneLite has not yet been updated to work with the latest\n"
+						+ "game update, it will work with reduced functionality until then.",
+					"RuneLite is outdated", INFORMATION_MESSAGE));
+			}
+			else
+			{
+				SwingUtilities.invokeLater(() -> JOptionPane.showMessageDialog(frame,
+					"RuneLite is outdated and is not compatible with the latest game update.\n"
+						+ "If you are doing pluginhub development, update the runeliteVersion property in build.gradle."
+						+ " Otherwise, git pull and rebuild.",
+					"RuneLite is outdated", ERROR_MESSAGE));
+			}
 		}
 
 		final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024L / 1024L);
@@ -1351,8 +1360,10 @@ public class ClientUI
 	{
 		// Force heavy-weight popups/tooltips.
 		// Prevents them from being obscured by the game applet.
-		ToolTipManager.sharedInstance().setLightWeightPopupEnabled(false);
-		ToolTipManager.sharedInstance().setInitialDelay(300);
+		var tooltipManager = ToolTipManager.sharedInstance();
+		tooltipManager.setLightWeightPopupEnabled(false);
+		tooltipManager.setInitialDelay(300);
+		tooltipManager.setDismissDelay(10_000);
 		JPopupMenu.setDefaultLightWeightPopupEnabled(false);
 
 		// Do not fill in background on repaint. Reduces flickering when

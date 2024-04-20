@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, Adam <Adam@sigterm.info>
+ * Copyright (c) 2024, DapperMickie <rustenhovenmick@gmail.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,25 +22,18 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.cache.definitions;
+package net.runelite.client.plugins.skillcalculator.skills;
 
-import java.util.List;
-import lombok.Data;
-import net.runelite.cache.region.Position;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
-@Data
-public class WorldMapDefinition
+@AllArgsConstructor
+@Getter(onMethod_ = @Override)
+public enum SmithingBonus implements SkillBonus
 {
-	public String name;
-	public int field450;
-	public int defaultZoom;
-	public int fileId;
-	public int field453;
-	public int field454;
-	public int field456;
-	public boolean isSurface;
-	public List regionList;
-	public String safeName;
-	public Position position;
-	public int field463;
+	GOLDSMITH_GAUNTLETS("Goldsmith Gauntlets", 2.5f),
+	;
+
+	private final String name;
+	private final float value;
 }

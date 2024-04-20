@@ -2190,6 +2190,11 @@ public class ChatCommandsPlugin extends Plugin
 
 			// Tombs of Amascut
 			case "toa":
+			case "tombs":
+			case "amascut":
+			case "warden":
+			case "wardens":
+			case "raids 3":
 				return "Tombs of Amascut";
 			case "toa 1":
 			case "toa solo":
@@ -2469,11 +2474,40 @@ public class ChatCommandsPlugin extends Plugin
 
 			// Desert Treasure 2 bosses
 			case "the leviathan":
+			case "levi":
 				return "Leviathan";
 			case "duke":
 				return "Duke Sucellus";
 			case "the whisperer":
+			case "whisp":
+			case "wisp":
 				return "Whisperer";
+			case "vard":
+				return "Vardorvis";
+
+			// dt2 awakened variants
+			case "leviathan awakened":
+			case "the leviathan awakened":
+			case "levi awakened":
+				return "Leviathan (awakened)";
+			case "duke sucellus awakened":
+			case "duke awakened":
+				return "Duke Sucellus (awakened)";
+			case "whisperer awakened":
+			case "the whisperer awakened":
+			case "whisp awakened":
+			case "wisp awakened":
+				return "Whisperer (awakened)";
+			case "vardorvis awakened":
+			case "vard awakened":
+				return "Vardorvis (awakened)";
+
+			// lunar chest variants
+			case "lunar chests":
+			case "perilous moons":
+			case "perilous moon":
+			case "moons of peril":
+				return "Lunar Chest";
 
 			default:
 				return WordUtils.capitalize(boss);
