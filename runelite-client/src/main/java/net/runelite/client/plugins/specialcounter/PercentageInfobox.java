@@ -1,5 +1,6 @@
 /*
- * Copyright (c) 2018, Adam <Adam@sigterm.info>
+ * Copyright (c) 2024, 1Defence
+ * Copyright (c) 2024, Adam <Adam@sigterm.info>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,47 +23,41 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.animsmoothing;
+package net.runelite.client.plugins.specialcounter;
 
-import net.runelite.client.config.Config;
-import net.runelite.client.config.ConfigGroup;
-import net.runelite.client.config.ConfigItem;
+import java.awt.Color;
+import java.awt.image.BufferedImage;
+import net.runelite.client.ui.overlay.infobox.InfoBox;
 
-@ConfigGroup(AnimationSmoothingPlugin.CONFIG_GROUP)
-public interface AnimationSmoothingConfig extends Config
+class PercentageInfobox extends InfoBox
 {
+	private float percent = 1f;
 
-	@ConfigItem(
-		keyName = "smoothPlayerAnimations",
-		name = "Smooth Player Animations",
-		description = "Configures whether the player animations are smooth or not",
-		position = 1
-	)
-	default boolean smoothPlayerAnimations()
+	PercentageInfobox(BufferedImage image, SpecialCounterPlugin plugin)
 	{
-		return true;
+		super(image, plugin);
 	}
 
-	@ConfigItem(
-		keyName = "smoothNpcAnimations",
-		name = "Smooth NPC Animations",
-		description = "Configures whether the npc animations are smooth or not",
-		position = 2
-	)
-	default boolean smoothNpcAnimations()
+	void mul(float p)
 	{
-		return true;
+		percent *= p;
 	}
 
-	@ConfigItem(
-		keyName = "smoothObjectAnimations",
-		name = "Smooth Object Animations",
-		description = "Configures whether the object animations are smooth or not",
-		position = 3
-	)
-	default boolean smoothObjectAnimations()
+	@Override
+	public String getTooltip()
 	{
-		return true;
+		return "Opponent defence has been reduced by " + getText() + ".";
 	}
 
+	@Override
+	public Color getTextColor()
+	{
+		return Color.WHITE;
+	}
+
+	@Override
+	public String getText()
+	{
+		return (int) ((1 - percent) * 100) + "%";
+	}
 }

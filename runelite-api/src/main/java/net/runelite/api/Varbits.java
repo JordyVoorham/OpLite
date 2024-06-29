@@ -610,9 +610,12 @@ public final class Varbits
 
 	public static final int BANK_REARRANGE_MODE = 3959;
 	public static final int CURRENT_BANK_TAB = 4150;
+	public static final int BANK_QUANTITY_TYPE = 6590;
+	public static final int BANK_REQUESTEDQUANTITY = 3960;
+	public static final int BANK_LEAVEPLACEHOLDERS = 3755;
 
-	public static final int WORLDHOPPER_FAVROITE_1 = 4597;
-	public static final int WORLDHOPPER_FAVROITE_2 = 4598;
+	public static final int WORLDHOPPER_FAVORITE_1 = 4597;
+	public static final int WORLDHOPPER_FAVORITE_2 = 4598;
 
 	/**
 	 * Spell activeness
