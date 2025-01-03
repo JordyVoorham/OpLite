@@ -104,6 +104,8 @@ public interface Client extends OAuthApi, GameEngine
 	 */
 	int getTotalLevel();
 
+	void scaleSprite(int[] canvas, int[] pixels, int color, int pixelX, int pixelY, int canvasIdx, int canvasOffset, int newWidth, int newHeight, int pixelWidth, int pixelHeight, int oldWidth);
+
 	/**
 	 * Adds a new chat message to the chatbox.
 	 *

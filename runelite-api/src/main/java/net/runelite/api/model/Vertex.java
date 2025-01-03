@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Adam <Adam@sigterm.info>
+ * Copyright (c) 2017, Adam <Adam@sigterm.info>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,79 +22,44 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.theatre;
+package net.runelite.api.model;
 
-import lombok.Getter;
+import net.runelite.api.Perspective;
+import lombok.Value;
 
 /**
- * Represents the four main cardinal points.
+ * Represents a point in a three-dimensional space.
  */
-public enum Direction
+@Value
+public class Vertex
 {
-	NORTH("N"),
-	EAST("E"),
-	SOUTH("S"),
-	WEST("W"),
-	NORTHEAST("NE"),
-	NORTHWEST("NW"),
-	SOUTHEAST("SE"),
-	SOUTHWEST("SW");
+    private final int x;
+    private final int y;
+    private final int z;
 
-	@Getter
-	private final String dirName;
+    /**
+     * Rotates the triangle by the given orientation.
+     *
+     * @param orientation passed orientation
+     * @return new instance
+     */
+    public Vertex rotate(int orientation)
+    {
+        // models are orientated north (1024) and there are 2048 angles total
+        orientation = (orientation + 1024) % 2048;
 
-	public static Direction getNearestDirection(int angle)
-	{
-		int round = angle >>> 9;
-		int up = angle & 256;
-		if (up != 0)
-		{
-			++round;
-		}
+        if (orientation == 0)
+        {
+            return this;
+        }
 
-		switch (round & 3)
-		{
-			case 0:
-				return SOUTH;
-			case 1:
-				return WEST;
-			case 2:
-				return NORTH;
-			case 3:
-				return EAST;
-			default:
-				throw new IllegalStateException();
-		}
-	}
+        int sin = Perspective.SINE[orientation];
+        int cos = Perspective.COSINE[orientation];
 
-	public static Direction getPreciseDirection(int angle)
-	{
-		int ordinalDirection = (int)Math.round((double)angle / 256.0D) % 8;
-		switch (ordinalDirection)
-		{
-			case 0:
-				return SOUTH;
-			case 1:
-				return SOUTHWEST;
-			case 2:
-				return WEST;
-			case 3:
-				return NORTHWEST;
-			case 4:
-				return NORTH;
-			case 5:
-				return NORTHEAST;
-			case 6:
-				return EAST;
-			case 7:
-				return SOUTHEAST;
-			default:
-				throw new IllegalStateException();
-		}
-	}
-
-	private Direction(String dirName)
-	{
-		this.dirName = dirName;
-	}
+        return new Vertex(
+                x * cos + z * sin >> 16,
+                y,
+                z * cos - x * sin >> 16
+        );
+    }
 }
