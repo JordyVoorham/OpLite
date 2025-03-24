@@ -6,15 +6,15 @@ import net.runelite.client.ui.overlay.OverlayManager;
 
 import javax.inject.Inject;
 
-public abstract class Custom {
-    protected final CustomPlugin plugin;
-    protected final CustomConfig config;
+public abstract class Cheat {
+    protected final CheatingPlugin plugin;
+    protected final CheatingConfig config;
 
     @Inject
     protected OverlayManager overlayManager;
 
     @Inject
-    public Custom(CustomPlugin plugin, CustomConfig config)
+    public Cheat(CheatingPlugin plugin, CheatingConfig config)
     {
         this.plugin = plugin;
         this.config = config;
@@ -23,7 +23,9 @@ public abstract class Custom {
     public void startUp(){}
     public void shutDown(){}
     public void onConfigChanged(final ConfigChanged event){}
+
     public void onGameTick(final GameTick event){}
+
     public void onVarbitChanged(final VarbitChanged event){}
     public void onNpcSpawned(final NpcSpawned event){}
     public void onNpcDespawned(final NpcDespawned event){}

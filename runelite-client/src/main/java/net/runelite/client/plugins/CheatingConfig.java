@@ -1,7 +1,8 @@
 package net.runelite.client.plugins;
 
-import net.runelite.client.util.PrayerHighlightMode;
-import net.runelite.client.config.FontStyle;
+import net.runelite.client.plugins.Util.PrayerHighlightMode;
+import net.runelite.client.plugins.config.FontStyle;
+import net.runelite.client.plugins.inferno.displaymodes.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import net.runelite.client.config.*;
@@ -9,8 +10,9 @@ import net.runelite.client.ui.overlay.components.ComponentOrientation;
 
 import java.awt.*;
 
-@ConfigGroup("Custom")
-public interface CustomConfig extends Config {
+@ConfigGroup("Cheating")
+public interface CheatingConfig extends Config
+{
     @ConfigSection(
             name = "Player attack timer",
             description = "",
@@ -105,7 +107,7 @@ public interface CustomConfig extends Config {
             position = 21,
             closedByDefault = true
     )
-    String toaScarabas = "TOA: Scarabas path";
+    String toaScarabas= "TOA: Scarabas path";
 
     @ConfigSection(
             name = "TOA: Apmeken path",
@@ -113,7 +115,7 @@ public interface CustomConfig extends Config {
             position = 22,
             closedByDefault = true
     )
-    String toaApmeken = "TOA: Apmeken path";
+    String toaApmeken= "TOA: Apmeken path";
 
     @ConfigSection(
             name = "TOA: Prayer helper",
@@ -129,7 +131,7 @@ public interface CustomConfig extends Config {
             position = 31,
             closedByDefault = true
     )
-    String toaWardens = "TOA: Wardens";
+    String toaWardens= "TOA: Wardens";
 
     @ConfigSection(
             name = "Maiden",
@@ -200,7 +202,8 @@ public interface CustomConfig extends Config {
             keyName = "debugAnimationIdsPAT",
             section = playerAttackTimer
     )
-    default boolean debugAnimationIdsPAT() {
+    default boolean debugAnimationIdsPAT()
+    {
         return false;
     }
 
@@ -214,7 +217,8 @@ public interface CustomConfig extends Config {
             keyName = "customAnimationsPAT",
             section = playerAttackTimer
     )
-    default String customAnimationsPAT() {
+    default String customAnimationsPAT()
+    {
         return "";
     }
 
@@ -225,7 +229,8 @@ public interface CustomConfig extends Config {
             keyName = "fontStylePAT",
             section = playerAttackTimer
     )
-    default FontStyle fontStylePAT() {
+    default FontStyle fontStylePAT()
+    {
         return FontStyle.BOLD;
     }
 
@@ -236,7 +241,8 @@ public interface CustomConfig extends Config {
             keyName = "fontShadowPAT",
             section = playerAttackTimer
     )
-    default boolean fontShadowPAT() {
+    default boolean fontShadowPAT()
+    {
         return true;
     }
 
@@ -251,7 +257,8 @@ public interface CustomConfig extends Config {
             keyName = "fontSizePAT",
             section = playerAttackTimer
     )
-    default int fontSizePAT() {
+    default int fontSizePAT()
+    {
         return 16;
     }
 
@@ -263,7 +270,8 @@ public interface CustomConfig extends Config {
             keyName = "fontColorPAT",
             section = playerAttackTimer
     )
-    default Color fontColorPAT() {
+    default Color fontColorPAT()
+    {
         return new Color(255, 255, 0, 255);
     }
 
@@ -278,7 +286,8 @@ public interface CustomConfig extends Config {
             keyName = "fontZOffsetPAT",
             section = playerAttackTimer
     )
-    default int fontZOffsetPAT() {
+    default int fontZOffsetPAT()
+    {
         return 0;
     }
 
@@ -297,7 +306,8 @@ public interface CustomConfig extends Config {
             keyName = "hunllefOverlayAttackCounter",
             section = gauntletHelper
     )
-    default boolean hunllefOverlayAttackCounter() {
+    default boolean hunllefOverlayAttackCounter()
+    {
         return false;
     }
 
@@ -308,7 +318,8 @@ public interface CustomConfig extends Config {
             keyName = "hunllefAttackCounterFontStyle",
             section = gauntletHelper
     )
-    default FontStyle hunllefAttackCounterFontStyle() {
+    default FontStyle hunllefAttackCounterFontStyle()
+    {
         return FontStyle.BOLD;
     }
 
@@ -324,7 +335,8 @@ public interface CustomConfig extends Config {
             section = gauntletHelper
     )
 
-    default int hunllefAttackCounterFontSize() {
+    default int hunllefAttackCounterFontSize()
+    {
         return 22;
     }
 
@@ -336,7 +348,8 @@ public interface CustomConfig extends Config {
             keyName = "hunllefOverlayWrongPrayerOutline",
             section = gauntletHelper
     )
-    default boolean hunllefOverlayWrongPrayerOutline() {
+    default boolean hunllefOverlayWrongPrayerOutline()
+    {
         return false;
     }
 
@@ -351,7 +364,8 @@ public interface CustomConfig extends Config {
             keyName = "hunllefWrongPrayerOutlineWidth",
             section = gauntletHelper
     )
-    default int hunllefWrongPrayerOutlineWidth() {
+    default int hunllefWrongPrayerOutlineWidth()
+    {
         return 4;
     }
 
@@ -365,7 +379,8 @@ public interface CustomConfig extends Config {
             keyName = "prayerOverlay",
             section = gauntletHelper
     )
-    default PrayerHighlightMode prayerOverlay() {
+    default PrayerHighlightMode prayerOverlay()
+    {
         return PrayerHighlightMode.NONE;
     }
 
@@ -381,7 +396,8 @@ public interface CustomConfig extends Config {
             keyName = "tornadoTickCounter",
             section = gauntletHelper
     )
-    default boolean tornadoTickCounter() {
+    default boolean tornadoTickCounter()
+    {
         return false;
     }
 
@@ -392,7 +408,8 @@ public interface CustomConfig extends Config {
             keyName = "tornadoFontStyle",
             section = gauntletHelper
     )
-    default FontStyle tornadoFontStyle() {
+    default FontStyle tornadoFontStyle()
+    {
         return FontStyle.BOLD;
     }
 
@@ -403,7 +420,8 @@ public interface CustomConfig extends Config {
             keyName = "tornadoFontShadow",
             section = gauntletHelper
     )
-    default boolean tornadoFontShadow() {
+    default boolean tornadoFontShadow()
+    {
         return true;
     }
 
@@ -418,7 +436,8 @@ public interface CustomConfig extends Config {
             keyName = "tornadoFontSize",
             section = gauntletHelper
     )
-    default int tornadoFontSize() {
+    default int tornadoFontSize()
+    {
         return 16;
     }
 
@@ -430,7 +449,8 @@ public interface CustomConfig extends Config {
             keyName = "tornadoFontColor",
             section = gauntletHelper
     )
-    default Color tornadoFontColor() {
+    default Color tornadoFontColor()
+    {
         return Color.WHITE;
     }
 
@@ -441,7 +461,8 @@ public interface CustomConfig extends Config {
             keyName = "tornadoTileOutline",
             section = gauntletHelper
     )
-    default boolean tornadoTileOutline() {
+    default boolean tornadoTileOutline()
+    {
         return false;
     }
 
@@ -456,7 +477,8 @@ public interface CustomConfig extends Config {
             keyName = "tornadoTileOutlineWidth",
             section = gauntletHelper
     )
-    default int tornadoTileOutlineWidth() {
+    default int tornadoTileOutlineWidth()
+    {
         return 1;
     }
 
@@ -468,7 +490,8 @@ public interface CustomConfig extends Config {
             keyName = "tornadoOutlineColor",
             section = gauntletHelper
     )
-    default Color tornadoOutlineColor() {
+    default Color tornadoOutlineColor()
+    {
         return Color.YELLOW;
     }
 
@@ -480,7 +503,8 @@ public interface CustomConfig extends Config {
             keyName = "tornadoFillColor",
             section = gauntletHelper
     )
-    default Color tornadoFillColor() {
+    default Color tornadoFillColor()
+    {
         return new Color(255, 255, 0, 50);
     }
 
@@ -494,7 +518,8 @@ public interface CustomConfig extends Config {
             keyName = "flashOn51Method",
             section = gauntletHelper
     )
-    default boolean flashOn51Method() {
+    default boolean flashOn51Method()
+    {
         return false;
     }
 
@@ -509,7 +534,8 @@ public interface CustomConfig extends Config {
             keyName = "flashOn51MethodDuration",
             section = gauntletHelper
     )
-    default int flashOn51MethodDuration() {
+    default int flashOn51MethodDuration()
+    {
         return 25;
     }
 
@@ -521,7 +547,8 @@ public interface CustomConfig extends Config {
             keyName = "flashOn51MethodColor",
             section = gauntletHelper
     )
-    default Color flashOn51MethodColor() {
+    default Color flashOn51MethodColor()
+    {
         return new Color(255, 190, 0, 50);
     }
 
@@ -532,7 +559,8 @@ public interface CustomConfig extends Config {
             keyName = "flashOnWrongAttack",
             section = gauntletHelper
     )
-    default boolean flashOnWrongAttack() {
+    default boolean flashOnWrongAttack()
+    {
         return false;
     }
 
@@ -547,7 +575,8 @@ public interface CustomConfig extends Config {
             keyName = "flashOnWrongAttackDuration",
             section = gauntletHelper
     )
-    default int flashOnWrongAttackDuration() {
+    default int flashOnWrongAttackDuration()
+    {
         return 25;
     }
 
@@ -559,7 +588,8 @@ public interface CustomConfig extends Config {
             keyName = "flashOnWrongAttackColor",
             section = gauntletHelper
     )
-    default Color flashOnWrongAttackColor() {
+    default Color flashOnWrongAttackColor()
+    {
         return new Color(255, 0, 0, 70);
     }
 
@@ -578,7 +608,8 @@ public interface CustomConfig extends Config {
             description = "Sets the font size for all theatre text overlays.",
             section = maiden
     )
-    default int theatreFontSize() {
+    default int theatreFontSize()
+    {
         return 12;
     }
 
@@ -589,7 +620,8 @@ public interface CustomConfig extends Config {
             description = "Highlights Maiden's Blood Pools.",
             section = maiden
     )
-    default boolean maidenBlood() {
+    default boolean maidenBlood()
+    {
         return true;
     }
 
@@ -600,7 +632,8 @@ public interface CustomConfig extends Config {
             description = "Highlights Maiden Blood Spawns (Tomatoes).",
             section = maiden
     )
-    default boolean maidenSpawns() {
+    default boolean maidenSpawns()
+    {
         return true;
     }
 
@@ -611,7 +644,8 @@ public interface CustomConfig extends Config {
             description = "Displays the health of each red crab.",
             section = maiden
     )
-    default boolean maidenRedsHealth() {
+    default boolean maidenRedsHealth()
+    {
         return true;
     }
 
@@ -622,7 +656,8 @@ public interface CustomConfig extends Config {
             description = "Displays the distance of each red crab to reach Maiden.",
             section = maiden
     )
-    default boolean maidenRedsDistance() {
+    default boolean maidenRedsDistance()
+    {
         return false;
     }
 
@@ -633,7 +668,8 @@ public interface CustomConfig extends Config {
             description = "Displays the tick counter for when she decides who to choose for tanking.",
             section = maiden
     )
-    default boolean maidenTickCounter() {
+    default boolean maidenTickCounter()
+    {
         return true;
     }
 
@@ -645,7 +681,8 @@ public interface CustomConfig extends Config {
             description = "Highlights Bloat's Tile.",
             section = bloat
     )
-    default boolean bloatIndicator() {
+    default boolean bloatIndicator()
+    {
         return true;
     }
 
@@ -657,7 +694,8 @@ public interface CustomConfig extends Config {
             description = "Select a color for when Bloat is UP.",
             section = bloat
     )
-    default Color bloatIndicatorColorUP() {
+    default Color bloatIndicatorColorUP()
+    {
         return Color.CYAN;
     }
 
@@ -669,7 +707,8 @@ public interface CustomConfig extends Config {
             description = "Select a color for when Bloat UP and goes over 37 ticks, which allows you to know when he can go down.",
             section = bloat
     )
-    default Color bloatIndicatorColorTHRESH() {
+    default Color bloatIndicatorColorTHRESH()
+    {
         return Color.ORANGE;
     }
 
@@ -681,7 +720,8 @@ public interface CustomConfig extends Config {
             description = "Select a color for when Bloat is DOWN.",
             section = bloat
     )
-    default Color bloatIndicatorColorDOWN() {
+    default Color bloatIndicatorColorDOWN()
+    {
         return Color.WHITE;
     }
 
@@ -693,7 +733,8 @@ public interface CustomConfig extends Config {
             description = "Select a color for when Bloat is DOWN and about to get UP.",
             section = bloat
     )
-    default Color bloatIndicatorColorWARN() {
+    default Color bloatIndicatorColorWARN()
+    {
         return Color.RED;
     }
 
@@ -704,7 +745,8 @@ public interface CustomConfig extends Config {
             description = "Displays the tick counter for how long Bloat has been DOWN or UP.",
             section = bloat
     )
-    default boolean bloatTickCounter() {
+    default boolean bloatTickCounter()
+    {
         return true;
     }
 
@@ -715,7 +757,8 @@ public interface CustomConfig extends Config {
             description = "Count up or Count down options on bloat downed state",
             section = bloat
     )
-    default BLOATTIMEDOWN BloatTickCountStyle() {
+    default BLOATTIMEDOWN BloatTickCountStyle()
+    {
         return BLOATTIMEDOWN.COUNTDOWN;
     }
 
@@ -726,7 +769,8 @@ public interface CustomConfig extends Config {
             description = "Highlights the tiles where Bloat's hands will fall.",
             section = bloat
     )
-    default boolean bloatHands() {
+    default boolean bloatHands()
+    {
         return false;
     }
 
@@ -738,7 +782,8 @@ public interface CustomConfig extends Config {
             description = "Select a color for the Bloat Hands Overlay to be.",
             section = bloat
     )
-    default Color bloatHandsColor() {
+    default Color bloatHandsColor()
+    {
         return Color.CYAN;
     }
 
@@ -750,7 +795,8 @@ public interface CustomConfig extends Config {
             description = "Sets the stroke width of the tile overlay where the hands fall. (BIGGER = THICKER).",
             section = bloat
     )
-    default int bloatHandsWidth() {
+    default int bloatHandsWidth()
+    {
         return 2;
     }
 
@@ -761,7 +807,8 @@ public interface CustomConfig extends Config {
             position = 15,
             section = bloat
     )
-    default boolean hideBloatTank() {
+    default boolean hideBloatTank()
+    {
         return false;
     }
 
@@ -772,7 +819,8 @@ public interface CustomConfig extends Config {
             position = 16,
             section = bloat
     )
-    default boolean hideCeilingChains() {
+    default boolean hideCeilingChains()
+    {
         return false;
     }
 
@@ -785,7 +833,8 @@ public interface CustomConfig extends Config {
             description = "Displays the health percentage of the pillars.",
             section = nylocas
     )
-    default boolean nyloPillars() {
+    default boolean nyloPillars()
+    {
         return true;
     }
 
@@ -796,7 +845,8 @@ public interface CustomConfig extends Config {
             description = "Highlights a Nylocas that is about to explode.",
             section = nylocas
     )
-    default boolean nyloExplosions() {
+    default boolean nyloExplosions()
+    {
         return true;
     }
 
@@ -808,7 +858,8 @@ public interface CustomConfig extends Config {
             description = "Displays the last 'x' amount of ticks for a Nylocas. (ex: to see the last 10 ticks, you set it to 10).",
             section = nylocas
     )
-    default int nyloExplosionDisplayTicks() {
+    default int nyloExplosionDisplayTicks()
+    {
         return 46;
     }
 
@@ -819,7 +870,8 @@ public interface CustomConfig extends Config {
             description = "How to display when a nylocas is about to explode.",
             section = nylocas
     )
-    default EXPLOSIVENYLORENDERSTYLE nyloExplosionOverlayStyle() {
+    default EXPLOSIVENYLORENDERSTYLE nyloExplosionOverlayStyle()
+    {
         return EXPLOSIVENYLORENDERSTYLE.RECOLOR_TICK;
     }
 
@@ -830,7 +882,8 @@ public interface CustomConfig extends Config {
             description = "Displays the tick counter of each nylocas spawn (Explodes on 52).",
             section = nylocas
     )
-    default boolean nyloTimeAlive() {
+    default boolean nyloTimeAlive()
+    {
         return false;
     }
 
@@ -841,7 +894,8 @@ public interface CustomConfig extends Config {
             description = "Count up or Count down options on the tick time alive.",
             section = nylocas
     )
-    default NYLOTIMEALIVE nyloTimeAliveCountStyle() {
+    default NYLOTIMEALIVE nyloTimeAliveCountStyle()
+    {
         return NYLOTIMEALIVE.COUNTDOWN;
     }
 
@@ -852,7 +906,8 @@ public interface CustomConfig extends Config {
             description = "Recolors the menu options of each Nylocas to it's respective attack style.",
             section = nylocas
     )
-    default boolean nyloRecolorMenu() {
+    default boolean nyloRecolorMenu()
+    {
         return false;
     }
 
@@ -863,7 +918,8 @@ public interface CustomConfig extends Config {
             description = "Select your role to highlight respective Nylocas to attack.",
             section = nylocas
     )
-    default boolean nyloHighlightOverlay() {
+    default boolean nyloHighlightOverlay()
+    {
         return false;
     }
 
@@ -874,7 +930,8 @@ public interface CustomConfig extends Config {
             description = "Displays how many Nylocas are currently alive.",
             section = nylocas
     )
-    default boolean nyloAlivePanel() {
+    default boolean nyloAlivePanel()
+    {
         return false;
     }
 
@@ -885,7 +942,8 @@ public interface CustomConfig extends Config {
             description = "Highlights aggressive Nylocas after they spawn.",
             section = nylocas
     )
-    default boolean nyloAggressiveOverlay() {
+    default boolean nyloAggressiveOverlay()
+    {
         return true;
     }
 
@@ -896,7 +954,8 @@ public interface CustomConfig extends Config {
             description = "Highlight style for aggressive Nylocas after they spawn.",
             section = nylocas
     )
-    default AGGRESSIVENYLORENDERSTYLE nyloAggressiveOverlayStyle() {
+    default AGGRESSIVENYLORENDERSTYLE nyloAggressiveOverlayStyle()
+    {
         return AGGRESSIVENYLORENDERSTYLE.TILE;
     }
 
@@ -908,7 +967,8 @@ public interface CustomConfig extends Config {
             description = "Removes the attack options for Nylocas immune to your current attack style.",
             section = nylocas
     )
-    default boolean removeNyloEntries() {
+    default boolean removeNyloEntries()
+    {
         return true;
     }
 
@@ -919,7 +979,8 @@ public interface CustomConfig extends Config {
             description = "Overlay's squares with wave numbers on nylo entry bridges for upcoming nylos",
             section = nylocas
     )
-    default boolean nyloWavesHelper() {
+    default boolean nyloWavesHelper()
+    {
         return false;
     }
 
@@ -930,7 +991,8 @@ public interface CustomConfig extends Config {
             description = "Prints how many ticks until the next wave could spawn",
             section = nylocas
     )
-    default boolean nyloTicksUntilWaves() {
+    default boolean nyloTicksUntilWaves()
+    {
         return false;
     }
 
@@ -941,7 +1003,8 @@ public interface CustomConfig extends Config {
             description = "Displays an instance timer when the next set will potentially spawn - ENTER ON ZERO.",
             section = nylocas
     )
-    default boolean nyloInstanceTimer() {
+    default boolean nyloInstanceTimer()
+    {
         return false;
     }
 
@@ -952,7 +1015,8 @@ public interface CustomConfig extends Config {
             description = "Sends a chat message when you have stalled the next wave of Nylocas to spawn due to being capped.",
             section = nylocas
     )
-    default boolean nyloStallMessage() {
+    default boolean nyloStallMessage()
+    {
         return false;
     }
 
@@ -963,7 +1027,8 @@ public interface CustomConfig extends Config {
             description = "Tells you when bigs will spawn little nylos",
             section = nylocas
     )
-    default boolean bigSplits() {
+    default boolean bigSplits()
+    {
         return false;
     }
 
@@ -975,7 +1040,8 @@ public interface CustomConfig extends Config {
             section = nylocas
     )
     @Alpha
-    default Color getBigSplitsHighlightColor() {
+    default Color getBigSplitsHighlightColor()
+    {
         return Color.YELLOW;
     }
 
@@ -987,7 +1053,8 @@ public interface CustomConfig extends Config {
             section = nylocas
     )
     @Alpha
-    default Color getBigSplitsTileColor2() {
+    default Color getBigSplitsTileColor2()
+    {
         return Color.ORANGE;
     }
 
@@ -999,7 +1066,8 @@ public interface CustomConfig extends Config {
             section = nylocas
     )
     @Alpha
-    default Color getBigSplitsTileColor1() {
+    default Color getBigSplitsTileColor1()
+    {
         return Color.RED;
     }
 
@@ -1011,7 +1079,8 @@ public interface CustomConfig extends Config {
             section = nylocas
     )
     @Alpha
-    default Color getBigSplitsTextColor2() {
+    default Color getBigSplitsTextColor2()
+    {
         return Color.ORANGE;
     }
 
@@ -1023,7 +1092,8 @@ public interface CustomConfig extends Config {
             section = nylocas
     )
     @Alpha
-    default Color getBigSplitsTextColor1() {
+    default Color getBigSplitsTextColor1()
+    {
         return Color.RED;
     }
 
@@ -1034,7 +1104,8 @@ public interface CustomConfig extends Config {
             description = "Displays the ticks left until the Nylocas Boss will attack next (LEFT-MOST).",
             section = nylocas
     )
-    default boolean nyloBossAttackTickCount() {
+    default boolean nyloBossAttackTickCount()
+    {
         return false;
     }
 
@@ -1045,7 +1116,8 @@ public interface CustomConfig extends Config {
             description = "Displays the ticks left until the Nylocas Boss will switch next (MIDDLE).",
             section = nylocas
     )
-    default boolean nyloBossSwitchTickCount() {
+    default boolean nyloBossSwitchTickCount()
+    {
         return true;
     }
 
@@ -1056,7 +1128,8 @@ public interface CustomConfig extends Config {
             description = "Displays the total ticks since the Nylocas Boss has spawned (RIGHT-MOST).",
             section = nylocas
     )
-    default boolean nyloBossTotalTickCount() {
+    default boolean nyloBossTotalTickCount()
+    {
         return false;
     }
 
@@ -1067,7 +1140,8 @@ public interface CustomConfig extends Config {
             description = "Removes the attack options for Nylocas Boss when immune to your current attack style.",
             section = nylocas
     )
-    default boolean removeNyloBossEntries() {
+    default boolean removeNyloBossEntries()
+    {
         return true;
     }
 
@@ -1079,7 +1153,8 @@ public interface CustomConfig extends Config {
             section = nylocas,
             position = 26
     )
-    default boolean getHighlightMeleeNylo() {
+    default boolean getHighlightMeleeNylo()
+    {
         return false;
     }
 
@@ -1101,7 +1176,8 @@ public interface CustomConfig extends Config {
             section = nylocas,
             position = 28
     )
-    default boolean getHighlightMageNylo() {
+    default boolean getHighlightMageNylo()
+    {
         return false;
     }
 
@@ -1123,7 +1199,8 @@ public interface CustomConfig extends Config {
             section = nylocas,
             position = 30
     )
-    default boolean getHighlightRangeNylo() {
+    default boolean getHighlightRangeNylo()
+    {
         return false;
     }
 
@@ -1144,7 +1221,8 @@ public interface CustomConfig extends Config {
             description = "Memorizes Solo Mazes and displays tiles of other chosen players.",
             section = sotetseg
     )
-    default boolean sotetsegMaze() {
+    default boolean sotetsegMaze()
+    {
         return true;
     }
 
@@ -1155,7 +1233,8 @@ public interface CustomConfig extends Config {
             description = "Displays the amount of ticks until it will hit you (change prayers when you see 1).",
             section = sotetseg
     )
-    default boolean sotetsegOrbAttacksTicks() {
+    default boolean sotetsegOrbAttacksTicks()
+    {
         return true;
     }
 
@@ -1166,7 +1245,8 @@ public interface CustomConfig extends Config {
             description = "Displays a tick counter for when Sotetseg will attack next.",
             section = sotetseg
     )
-    default boolean sotetsegAutoAttacksTicks() {
+    default boolean sotetsegAutoAttacksTicks()
+    {
         return true;
     }
 
@@ -1177,7 +1257,8 @@ public interface CustomConfig extends Config {
             description = "Displays how many ticks until the ball will explode (eat when you see 0).",
             section = sotetseg
     )
-    default boolean sotetsegBigOrbTicks() {
+    default boolean sotetsegBigOrbTicks()
+    {
         return true;
     }
 
@@ -1189,7 +1270,8 @@ public interface CustomConfig extends Config {
             description = "Select a color for the Sotetseg Big Ball tick countdown text.",
             section = sotetseg
     )
-    default Color sotetsegBigOrbTickColor() {
+    default Color sotetsegBigOrbTickColor()
+    {
         return Color.WHITE;
     }
 
@@ -1201,7 +1283,8 @@ public interface CustomConfig extends Config {
             description = "Select a color for the Sotetseg Big Ball tile color.",
             section = sotetseg
     )
-    default Color sotetsegBigOrbTileColor() {
+    default Color sotetsegBigOrbTileColor()
+    {
         return new Color(188, 74, 74, 255);
     }
 
@@ -1214,7 +1297,8 @@ public interface CustomConfig extends Config {
             description = "Displays the Xarpus Instance timer to be tick efficient with the first spawn of an exhumed - ENTER ON ZERO.",
             section = xarpus
     )
-    default boolean xarpusInstanceTimer() {
+    default boolean xarpusInstanceTimer()
+    {
         return true;
     }
 
@@ -1225,7 +1309,8 @@ public interface CustomConfig extends Config {
             description = "Highlights the tiles of exhumed spawns.",
             section = xarpus
     )
-    default boolean xarpusExhumed() {
+    default boolean xarpusExhumed()
+    {
         return true;
     }
 
@@ -1236,7 +1321,8 @@ public interface CustomConfig extends Config {
             description = "Displays how many ticks until the exhumeds will despawn.",
             section = xarpus
     )
-    default boolean xarpusExhumedTick() {
+    default boolean xarpusExhumedTick()
+    {
         return true;
     }
 
@@ -1247,7 +1333,8 @@ public interface CustomConfig extends Config {
             description = "Count the amount of exhumeds.",
             section = xarpus
     )
-    default XARPUS_EXHUMED_COUNT xarpusExhumedCount() {
+    default XARPUS_EXHUMED_COUNT xarpusExhumedCount()
+    {
         return XARPUS_EXHUMED_COUNT.DOWN;
     }
 
@@ -1258,7 +1345,8 @@ public interface CustomConfig extends Config {
             description = "Displays a tick counter for when Xarpus faces a new target to spit at.",
             section = xarpus
     )
-    default boolean xarpusTickP2() {
+    default boolean xarpusTickP2()
+    {
         return true;
     }
 
@@ -1269,7 +1357,8 @@ public interface CustomConfig extends Config {
             description = "Displays a tick counter for when Xarpus will rotate.",
             section = xarpus
     )
-    default boolean xarpusTickP3() {
+    default boolean xarpusTickP3()
+    {
         return true;
     }
 
@@ -1280,7 +1369,8 @@ public interface CustomConfig extends Config {
             description = "Displays Xarpus's Line of Sight on P3<br>Melee Tiles: Displays only the melee tiles that Xarpus can see<br>Square: Displays the whole region that Xarpus can see",
             section = xarpus
     )
-    default XARPUS_LINE_OF_SIGHT xarpusLineOfSight() {
+    default XARPUS_LINE_OF_SIGHT xarpusLineOfSight()
+    {
         return XARPUS_LINE_OF_SIGHT.OFF;
     }
 
@@ -1292,7 +1382,8 @@ public interface CustomConfig extends Config {
             description = "Customize the color for Xarpus's Line of Sight",
             section = xarpus
     )
-    default Color xarpusLineOfSightColor() {
+    default Color xarpusLineOfSightColor()
+    {
         return Color.RED;
     }
 
@@ -1305,7 +1396,8 @@ public interface CustomConfig extends Config {
             description = "Highlights Verzik's tile - If you are next to or inside of the indicator, you can be meleed.",
             section = verzik
     )
-    default boolean verzikTileOverlay() {
+    default boolean verzikTileOverlay()
+    {
         return true;
     }
 
@@ -1316,7 +1408,8 @@ public interface CustomConfig extends Config {
             description = "Highlights the tiles of Verzik's range projectiles.",
             section = verzik
     )
-    default boolean verzikProjectiles() {
+    default boolean verzikProjectiles()
+    {
         return true;
     }
 
@@ -1328,7 +1421,8 @@ public interface CustomConfig extends Config {
             description = "Select a color for the Verzik's Range Projectile Tile Overlay to be.",
             section = verzik
     )
-    default Color verzikProjectilesColor() {
+    default Color verzikProjectilesColor()
+    {
         return new Color(255, 0, 0, 50);
     }
 
@@ -1339,7 +1433,8 @@ public interface CustomConfig extends Config {
             description = "Displays the health of red crabs during Verzik.",
             section = verzik
     )
-    default boolean verzikReds() {
+    default boolean verzikReds()
+    {
         return true;
     }
 
@@ -1350,7 +1445,8 @@ public interface CustomConfig extends Config {
             description = "Displays the ticks until Verzik will attack next.",
             section = verzik
     )
-    default boolean verzikAutosTick() {
+    default boolean verzikAutosTick()
+    {
         return true;
     }
 
@@ -1361,7 +1457,8 @@ public interface CustomConfig extends Config {
             description = "Displays Verzik's Attack Count (useful for when P2 reds as they despawn after the 7th attack).",
             section = verzik
     )
-    default boolean verzikAttackCounter() {
+    default boolean verzikAttackCounter()
+    {
         return false;
     }
 
@@ -1372,7 +1469,8 @@ public interface CustomConfig extends Config {
             description = "Displays the total amount of ticks Verzik has been alive for.",
             section = verzik
     )
-    default boolean verzikTotalTickCounter() {
+    default boolean verzikTotalTickCounter()
+    {
         return false;
     }
 
@@ -1383,7 +1481,8 @@ public interface CustomConfig extends Config {
             description = "Highlights the Nylocas that are targeting YOU and ONLY you.",
             section = verzik
     )
-    default boolean verzikNyloPersonalWarning() {
+    default boolean verzikNyloPersonalWarning()
+    {
         return true;
     }
 
@@ -1394,7 +1493,8 @@ public interface CustomConfig extends Config {
             description = "Highlights the Nylocas that are targeting OTHER players.",
             section = verzik
     )
-    default boolean verzikNyloOtherWarning() {
+    default boolean verzikNyloOtherWarning()
+    {
         return true;
     }
 
@@ -1405,7 +1505,8 @@ public interface CustomConfig extends Config {
             description = "Displays the number of attacks before a lightning ball.",
             section = verzik
     )
-    default boolean lightningAttackHelper() {
+    default boolean lightningAttackHelper()
+    {
         return false;
     }
 
@@ -1416,7 +1517,8 @@ public interface CustomConfig extends Config {
             description = "Displays the number of ticks before a lightning ball hits you.",
             section = verzik
     )
-    default boolean lightningAttackTick() {
+    default boolean lightningAttackTick()
+    {
         return false;
     }
 
@@ -1427,7 +1529,8 @@ public interface CustomConfig extends Config {
             description = "Removes the ability to attack the Purple nylo if you cannot poison it",
             section = verzik
     )
-    default boolean purpleCrabAttackMES() {
+    default boolean purpleCrabAttackMES()
+    {
         return false;
     }
 
@@ -1438,7 +1541,8 @@ public interface CustomConfig extends Config {
             description = "If a weapon is added to this set, it will NOT deprio attack on Nylocas Athanatos.",
             section = verzik
     )
-    default String weaponSet() {
+    default String weaponSet()
+    {
         return "12926, 12006, 22292, 12899";
     }
 
@@ -1449,7 +1553,8 @@ public interface CustomConfig extends Config {
             description = "Highlights the area of explosion for the Nylocas (Personal or Indirect Warnings MUST be enabled).",
             section = verzik
     )
-    default boolean verzikNyloExplodeAOE() {
+    default boolean verzikNyloExplodeAOE()
+    {
         return true;
     }
 
@@ -1460,7 +1565,8 @@ public interface CustomConfig extends Config {
             description = "Highlights the tile of the player tanking to help clarify.",
             section = verzik
     )
-    default boolean verzikDisplayTank() {
+    default boolean verzikDisplayTank()
+    {
         return true;
     }
 
@@ -1471,7 +1577,8 @@ public interface CustomConfig extends Config {
             description = "Highlights the yellow pools and displays the amount of ticks until you can move away or tick eat.",
             section = verzik
     )
-    default boolean verzikYellows() {
+    default boolean verzikYellows()
+    {
         return true;
     }
 
@@ -1482,7 +1589,8 @@ public interface CustomConfig extends Config {
             description = "Displays who the green ball is targeting.",
             section = verzik
     )
-    default boolean verzikGreenBall() {
+    default boolean verzikGreenBall()
+    {
         return true;
     }
 
@@ -1494,7 +1602,8 @@ public interface CustomConfig extends Config {
             description = "Select a color for the Verzik's Green Ball Tile Overlay to be.",
             section = verzik
     )
-    default Color verzikGreenBallColor() {
+    default Color verzikGreenBallColor()
+    {
         return new Color(59, 140, 83, 255);
     }
 
@@ -1505,7 +1614,8 @@ public interface CustomConfig extends Config {
             description = "Choose between a tile or 3-by-3 area marker.",
             section = verzik
     )
-    default VERZIKBALLTILE verzikGreenBallMarker() {
+    default VERZIKBALLTILE verzikGreenBallMarker()
+    {
         return VERZIKBALLTILE.TILE;
     }
 
@@ -1516,7 +1626,8 @@ public interface CustomConfig extends Config {
             description = "Displays the number of ticks until the green ball nukes you.",
             section = verzik
     )
-    default boolean verzikGreenBallTick() {
+    default boolean verzikGreenBallTick()
+    {
         return false;
     }
 
@@ -1527,7 +1638,8 @@ public interface CustomConfig extends Config {
             description = "Displays the tornado that is targeting you.",
             section = verzik
     )
-    default boolean verzikTornado() {
+    default boolean verzikTornado()
+    {
         return true;
     }
 
@@ -1538,7 +1650,8 @@ public interface CustomConfig extends Config {
             description = "Displays the tornado that is targeting you ONLY after it solves which one is targeting you.",
             section = verzik
     )
-    default boolean verzikPersonalTornadoOnly() {
+    default boolean verzikPersonalTornadoOnly()
+    {
         return false;
     }
 
@@ -1550,7 +1663,8 @@ public interface CustomConfig extends Config {
             description = "Select a color for the Verzik Tornadoes Overlay to be.",
             section = verzik
     )
-    default Color verzikTornadoColor() {
+    default Color verzikTornadoColor()
+    {
         return Color.RED;
     }
 
@@ -1561,7 +1675,8 @@ public interface CustomConfig extends Config {
             description = "Highlight tile with disappearing poison",
             section = verzik
     )
-    default boolean verzikPoisonTileHighlight() {
+    default boolean verzikPoisonTileHighlight()
+    {
         return true;
     }
 
@@ -1573,9 +1688,11 @@ public interface CustomConfig extends Config {
             description = "Select a color for the Verzik poison tiles.",
             section = verzik
     )
-    default Color verzikPoisonTileHighlightColor() {
+    default Color verzikPoisonTileHighlightColor()
+    {
         return new Color(184, 246, 196, 152);
     }
+
 
 
     @ConfigItem(
@@ -1585,7 +1702,8 @@ public interface CustomConfig extends Config {
             description = "Counts attacks until next special on P3 Verzik.",
             section = verzik
     )
-    default boolean specialCounter() {
+    default boolean specialCounter()
+    {
         return true;
     }
 
@@ -1596,7 +1714,8 @@ public interface CustomConfig extends Config {
             keyName = "VerzikOverlayWrongPrayerOutline",
             section = verzik
     )
-    default boolean VerzikOverlayWrongPrayerOutline() {
+    default boolean VerzikOverlayWrongPrayerOutline()
+    {
         return true;
     }
 
@@ -1611,7 +1730,8 @@ public interface CustomConfig extends Config {
             keyName = "VerzikWrongPrayerOutlineWidth",
             section = verzik
     )
-    default int VerzikWrongPrayerOutlineWidth() {
+    default int VerzikWrongPrayerOutlineWidth()
+    {
         return 2;
     }
 
@@ -1624,7 +1744,8 @@ public interface CustomConfig extends Config {
             description = "Display prayer indicator in the prayer tab or in the bottom right corner of the screen",
             section = tPrayer
     )
-    default boolean prayerHelper() {
+    default boolean prayerHelper()
+    {
         return true;
     }
 
@@ -1635,7 +1756,8 @@ public interface CustomConfig extends Config {
             description = "Draws timing boxes above the prayer icons, as if you were playing Guitar Hero",
             section = tPrayer
     )
-    default boolean descendingBoxes() {
+    default boolean descendingBoxes()
+    {
         return false;
     }
 
@@ -1646,7 +1768,8 @@ public interface CustomConfig extends Config {
             description = "Render prayer helper at all time, even when other inventory tabs are open.",
             section = tPrayer
     )
-    default boolean alwaysShowPrayerHelper() {
+    default boolean alwaysShowPrayerHelper()
+    {
         return true;
     }
 
@@ -1658,7 +1781,8 @@ public interface CustomConfig extends Config {
             description = "Color for descending box normal",
             section = tPrayer
     )
-    default Color prayerColor() {
+    default Color prayerColor()
+    {
         return Color.ORANGE;
     }
 
@@ -1670,7 +1794,8 @@ public interface CustomConfig extends Config {
             description = "Color for descending box one tick before damage",
             section = tPrayer
     )
-    default Color prayerColorDanger() {
+    default Color prayerColorDanger()
+    {
         return Color.RED;
     }
 
@@ -1681,7 +1806,8 @@ public interface CustomConfig extends Config {
             description = "Render descending boxes for prayers that are not the priority prayer for that tick",
             section = tPrayer
     )
-    default boolean indicateNonPriorityDescendingBoxes() {
+    default boolean indicateNonPriorityDescendingBoxes()
+    {
         return true;
     }
 
@@ -1692,7 +1818,8 @@ public interface CustomConfig extends Config {
             description = "Render prayers during the sotetseg fight",
             section = tPrayer
     )
-    default boolean sotetsegPrayerHelper() {
+    default boolean sotetsegPrayerHelper()
+    {
         return false;
     }
 
@@ -1703,7 +1830,8 @@ public interface CustomConfig extends Config {
             description = "Render prayers during the verzik fight",
             section = tPrayer
     )
-    default boolean verzikPrayerHelper() {
+    default boolean verzikPrayerHelper()
+    {
         return true;
     }
 
@@ -1717,7 +1845,8 @@ public interface CustomConfig extends Config {
             position = 0,
             section = hydra
     )
-    default boolean hydraImmunityOutline() {
+    default boolean hydraImmunityOutline()
+    {
         return false;
     }
 
@@ -1728,7 +1857,8 @@ public interface CustomConfig extends Config {
             position = 1,
             section = hydra
     )
-    default boolean fountainOutline() {
+    default boolean fountainOutline()
+    {
         return false;
     }
 
@@ -1739,7 +1869,8 @@ public interface CustomConfig extends Config {
             position = 2,
             section = hydra
     )
-    default boolean fountainTicks() {
+    default boolean fountainTicks()
+    {
         return false;
     }
 
@@ -1750,7 +1881,8 @@ public interface CustomConfig extends Config {
             keyName = "fountainTicksFontStyle",
             section = hydra
     )
-    default FontStyle fountainTicksFontStyle() {
+    default FontStyle fountainTicksFontStyle()
+    {
         return FontStyle.BOLD;
     }
 
@@ -1761,7 +1893,8 @@ public interface CustomConfig extends Config {
             keyName = "fountainTicksFontShadow",
             section = hydra
     )
-    default boolean fountainTicksFontShadow() {
+    default boolean fountainTicksFontShadow()
+    {
         return true;
     }
 
@@ -1776,7 +1909,8 @@ public interface CustomConfig extends Config {
             keyName = "fountainTicksFontSize",
             section = hydra
     )
-    default int fountainTicksFontSize() {
+    default int fountainTicksFontSize()
+    {
         return 16;
     }
 
@@ -1788,7 +1922,8 @@ public interface CustomConfig extends Config {
             keyName = "fountainTicksFontColor",
             section = hydra
     )
-    default Color fountainTicksFontColor() {
+    default Color fountainTicksFontColor()
+    {
         return new Color(255, 255, 255, 255);
     }
 
@@ -1803,7 +1938,8 @@ public interface CustomConfig extends Config {
             keyName = "fountainTicksFontZOffset",
             section = hydra
     )
-    default int fountainTicksFontZOffset() {
+    default int fountainTicksFontZOffset()
+    {
         return 0;
     }
 
@@ -1815,7 +1951,8 @@ public interface CustomConfig extends Config {
             position = 8,
             section = hydra
     )
-    default boolean hidePrayerOnSpecial() {
+    default boolean hidePrayerOnSpecial()
+    {
         return false;
     }
 
@@ -1826,7 +1963,8 @@ public interface CustomConfig extends Config {
             position = 9,
             section = hydra
     )
-    default boolean showHpUntilPhaseChange() {
+    default boolean showHpUntilPhaseChange()
+    {
         return false;
     }
 
@@ -1837,7 +1975,8 @@ public interface CustomConfig extends Config {
             keyName = "fontStyleHydra",
             section = hydra
     )
-    default FontStyle fontStyleHydra() {
+    default FontStyle fontStyleHydra()
+    {
         return FontStyle.BOLD;
     }
 
@@ -1848,7 +1987,8 @@ public interface CustomConfig extends Config {
             keyName = "fontShadowHydra",
             section = hydra
     )
-    default boolean fontShadowHydra() {
+    default boolean fontShadowHydra()
+    {
         return true;
     }
 
@@ -1863,7 +2003,8 @@ public interface CustomConfig extends Config {
             keyName = "fontSizeHydra",
             section = hydra
     )
-    default int fontSizeHydra() {
+    default int fontSizeHydra()
+    {
         return 16;
     }
 
@@ -1875,7 +2016,8 @@ public interface CustomConfig extends Config {
             keyName = "fontColorHydra",
             section = hydra
     )
-    default Color fontColorHydra() {
+    default Color fontColorHydra()
+    {
         return new Color(255, 255, 255, 255);
     }
 
@@ -1890,7 +2032,8 @@ public interface CustomConfig extends Config {
             keyName = "fontZOffset",
             section = hydra
     )
-    default int fontZOffsetHydra() {
+    default int fontZOffsetHydra()
+    {
         return 0;
     }
 
@@ -1903,7 +2046,8 @@ public interface CustomConfig extends Config {
             position = 100,
             section = hydra
     )
-    default boolean lightningOutline() {
+    default boolean lightningOutline()
+    {
         return false;
     }
 
@@ -1918,7 +2062,8 @@ public interface CustomConfig extends Config {
             keyName = "lightningStroke",
             section = hydra
     )
-    default int lightningStroke() {
+    default int lightningStroke()
+    {
         return 1;
     }
 
@@ -1930,7 +2075,8 @@ public interface CustomConfig extends Config {
             keyName = "lightningOutlineColor",
             section = hydra
     )
-    default Color lightningOutlineColor() {
+    default Color lightningOutlineColor()
+    {
         return Color.CYAN;
     }
 
@@ -1942,7 +2088,8 @@ public interface CustomConfig extends Config {
             keyName = "lightningFillColor",
             section = hydra
     )
-    default Color lightningFillColor() {
+    default Color lightningFillColor()
+    {
         return new Color(0, 255, 255, 30);
     }
 
@@ -1953,7 +2100,8 @@ public interface CustomConfig extends Config {
             position = 104,
             section = hydra
     )
-    default boolean poisonOutline() {
+    default boolean poisonOutline()
+    {
         return false;
     }
 
@@ -1968,7 +2116,8 @@ public interface CustomConfig extends Config {
             keyName = "poisonStroke",
             section = hydra
     )
-    default int poisonStroke() {
+    default int poisonStroke()
+    {
         return 1;
     }
 
@@ -1980,7 +2129,8 @@ public interface CustomConfig extends Config {
             position = 106,
             section = hydra
     )
-    default Color poisonOutlineColor() {
+    default Color poisonOutlineColor()
+    {
         return Color.RED;
     }
 
@@ -1992,7 +2142,8 @@ public interface CustomConfig extends Config {
             position = 107,
             section = hydra
     )
-    default Color poisonFillColor() {
+    default Color poisonFillColor()
+    {
         return new Color(255, 0, 0, 30);
     }
 
@@ -2006,7 +2157,8 @@ public interface CustomConfig extends Config {
             position = 200,
             section = hydra
     )
-    default Color safeColor() {
+    default Color safeColor()
+    {
         return new Color(0, 150, 0, 150);
     }
 
@@ -2018,7 +2170,8 @@ public interface CustomConfig extends Config {
             position = 201,
             section = hydra
     )
-    default Color warningColor() {
+    default Color warningColor()
+    {
         return new Color(200, 150, 0, 150);
     }
 
@@ -2030,7 +2183,8 @@ public interface CustomConfig extends Config {
             position = 202,
             section = hydra
     )
-    default Color dangerColor() {
+    default Color dangerColor()
+    {
         return new Color(150, 0, 0, 150);
     }
 
@@ -2042,7 +2196,8 @@ public interface CustomConfig extends Config {
             description = "Shows you which prayer to click and the time until click.",
             section = godWars
     )
-    default boolean showPrayerWidgetHelper() {
+    default boolean showPrayerWidgetHelper()
+    {
         return false;
     }
 
@@ -2053,7 +2208,8 @@ public interface CustomConfig extends Config {
             description = "Shows you where the melee bosses can hit you from.",
             section = godWars
     )
-    default boolean showHitSquares() {
+    default boolean showHitSquares()
+    {
         return false;
     }
 
@@ -2065,7 +2221,8 @@ public interface CustomConfig extends Config {
                     "<br> at 1 tick remaining, signaling you to swap.",
             section = godWars
     )
-    default boolean changeTickColor() {
+    default boolean changeTickColor()
+    {
         return false;
     }
 
@@ -2076,7 +2233,8 @@ public interface CustomConfig extends Config {
             description = "Ignore monsters that are not attacking you",
             section = godWars
     )
-    default boolean ignoreNonAttacking() {
+    default boolean ignoreNonAttacking()
+    {
         return false;
     }
 
@@ -2087,7 +2245,8 @@ public interface CustomConfig extends Config {
             description = "Render \"Guitar Hero\" style prayer helper",
             section = godWars
     )
-    default boolean guitarHeroMode() {
+    default boolean guitarHeroMode()
+    {
         return false;
     }
 
@@ -2098,7 +2257,8 @@ public interface CustomConfig extends Config {
             description = "Show tick timers for GWD Bosses. This must be enabled before you zone in.",
             section = godWars
     )
-    default boolean gwd() {
+    default boolean gwd()
+    {
         return true;
     }
 
@@ -2110,7 +2270,8 @@ public interface CustomConfig extends Config {
             description = "Plain | Bold | Italics",
             section = godWars
     )
-    default FontStyle fontStyleGWD() {
+    default FontStyle fontStyleGWD()
+    {
         return FontStyle.BOLD;
     }
 
@@ -2125,7 +2286,8 @@ public interface CustomConfig extends Config {
             description = "Text Size for Timers.",
             section = godWars
     )
-    default int textSizeGWD() {
+    default int textSizeGWD()
+    {
         return 16;
     }
 
@@ -2136,7 +2298,8 @@ public interface CustomConfig extends Config {
             description = "Adds Shadows to text.",
             section = godWars
     )
-    default boolean shadowsGWD() {
+    default boolean shadowsGWD()
+    {
         return false;
     }
 
@@ -2148,7 +2311,8 @@ public interface CustomConfig extends Config {
             description = "Places an overlay around muttadiles showing their melee range.",
             section = cox
     )
-    default boolean muttadile() {
+    default boolean muttadile()
+    {
         return true;
     }
 
@@ -2159,7 +2323,8 @@ public interface CustomConfig extends Config {
             description = "Change hit area tile color for muttadiles",
             section = cox
     )
-    default Color muttaColor() {
+    default Color muttaColor()
+    {
         return new Color(0, 255, 99);
     }
 
@@ -2170,7 +2335,8 @@ public interface CustomConfig extends Config {
             description = "Places an overlay around Tekton showing his melee range.",
             section = cox
     )
-    default boolean tekton() {
+    default boolean tekton()
+    {
         return true;
     }
 
@@ -2181,7 +2347,8 @@ public interface CustomConfig extends Config {
             description = "Counts down current phase timer, and attack ticks.",
             section = cox
     )
-    default boolean tektonTickCounter() {
+    default boolean tektonTickCounter()
+    {
         return true;
     }
 
@@ -2192,7 +2359,8 @@ public interface CustomConfig extends Config {
             description = "Change hit area tile color for Tekton",
             section = cox
     )
-    default Color tektonColor() {
+    default Color tektonColor()
+    {
         return new Color(193, 255, 245);
     }
 
@@ -2203,7 +2371,8 @@ public interface CustomConfig extends Config {
             description = "Places an overlay near Guardians showing safespot.",
             section = cox
     )
-    default boolean guardians() {
+    default boolean guardians()
+    {
         return true;
     }
 
@@ -2214,7 +2383,8 @@ public interface CustomConfig extends Config {
             description = "Places an overlay on Guardians showing attack tick timers.",
             section = cox
     )
-    default boolean guardinTickCounter() {
+    default boolean guardinTickCounter()
+    {
         return true;
     }
 
@@ -2225,7 +2395,8 @@ public interface CustomConfig extends Config {
             description = "Change safespot area tile color for Guardians",
             section = cox
     )
-    default Color guardColor() {
+    default Color guardColor()
+    {
         return new Color(0, 255, 99);
     }
 
@@ -2237,7 +2408,8 @@ public interface CustomConfig extends Config {
             description = "Color is based on their attack style.",
             section = cox
     )
-    default boolean vangHighlight() {
+    default boolean vangHighlight()
+    {
         return true;
     }
 
@@ -2248,7 +2420,8 @@ public interface CustomConfig extends Config {
             description = "This will create an infobox with vanguards current hp.",
             section = cox
     )
-    default boolean vangHealth() {
+    default boolean vangHealth()
+    {
         return true;
     }
 
@@ -2259,7 +2432,8 @@ public interface CustomConfig extends Config {
             description = "Shows what prayer to use during olm.",
             section = cox
     )
-    default boolean prayAgainstOlm() {
+    default boolean prayAgainstOlm()
+    {
         return true;
     }
 
@@ -2275,7 +2449,8 @@ public interface CustomConfig extends Config {
             section = cox
     )
     @Units(Units.PIXELS)
-    default int prayAgainstOlmSize() {
+    default int prayAgainstOlmSize()
+    {
         return 40;
     }
 
@@ -2286,7 +2461,8 @@ public interface CustomConfig extends Config {
             description = "Shows tick timers for burns/acids.",
             section = cox
     )
-    default boolean timers() {
+    default boolean timers()
+    {
         return true;
     }
 
@@ -2297,7 +2473,8 @@ public interface CustomConfig extends Config {
             description = "Changes tile color for burn victim.",
             section = cox
     )
-    default Color burnColor() {
+    default Color burnColor()
+    {
         return new Color(255, 100, 0);
     }
 
@@ -2309,7 +2486,8 @@ public interface CustomConfig extends Config {
             description = "Changes tile color for acid victim.",
             section = cox
     )
-    default Color acidColor() {
+    default Color acidColor()
+    {
         return new Color(69, 241, 44);
     }
 
@@ -2320,7 +2498,8 @@ public interface CustomConfig extends Config {
             description = "Shows Overlays for targeted teleports.",
             section = cox
     )
-    default boolean tpOverlay() {
+    default boolean tpOverlay()
+    {
         return true;
     }
 
@@ -2331,7 +2510,8 @@ public interface CustomConfig extends Config {
             description = "Changes tile color for teleport target.",
             section = cox
     )
-    default Color tpColor() {
+    default Color tpColor()
+    {
         return new Color(193, 255, 245);
     }
 
@@ -2342,7 +2522,8 @@ public interface CustomConfig extends Config {
             description = "Show Tick Counter on Olm",
             section = cox
     )
-    default boolean olmTick() {
+    default boolean olmTick()
+    {
         return true;
     }
 
@@ -2353,7 +2534,8 @@ public interface CustomConfig extends Config {
             description = "Dev tool to show info about olm",
             section = cox
     )
-    default boolean olmDebug() {
+    default boolean olmDebug()
+    {
         return false;
     }
 
@@ -2364,7 +2546,8 @@ public interface CustomConfig extends Config {
             description = "Will highlight olm depending on which phase type is active. Red=Flame Green=Acid Purple=Crystal",
             section = cox
     )
-    default boolean olmPShowPhase() {
+    default boolean olmPShowPhase()
+    {
         return false;
     }
 
@@ -2376,7 +2559,8 @@ public interface CustomConfig extends Config {
             description = "Changes color of a special on Olm's tick counter",
             section = cox
     )
-    default Color olmSpecialColor() {
+    default Color olmSpecialColor()
+    {
         return new Color(89, 255, 0);
     }
 
@@ -2388,7 +2572,8 @@ public interface CustomConfig extends Config {
             description = "Bold/Italics/Plain",
             section = cox
     )
-    default FontStyle fontStyleCOX() {
+    default FontStyle fontStyleCOX()
+    {
         return FontStyle.BOLD;
     }
 
@@ -2403,7 +2588,8 @@ public interface CustomConfig extends Config {
             description = "Text Size for Timers.",
             section = cox
     )
-    default int textSizeCOX() {
+    default int textSizeCOX()
+    {
         return 14;
     }
 
@@ -2414,7 +2600,8 @@ public interface CustomConfig extends Config {
             description = "Adds Shadows to text.",
             section = cox
     )
-    default boolean shadowsCOX() {
+    default boolean shadowsCOX()
+    {
         return true;
     }
 
@@ -2425,7 +2612,8 @@ public interface CustomConfig extends Config {
             description = "Marks tiles for 4:1 rotation",
             section = cox
     )
-    default boolean fourToOne() {
+    default boolean fourToOne()
+    {
         return true;
     }
 
@@ -2436,7 +2624,8 @@ public interface CustomConfig extends Config {
             description = "Only activate 4:1 in Solo's",
             section = cox
     )
-    default boolean solo() {
+    default boolean solo()
+    {
         return true;
     }
 
@@ -2447,7 +2636,8 @@ public interface CustomConfig extends Config {
             description = "If a weapon is added to this set, it will activate 4:1 tiles if this weapon is equiped",
             section = cox
     )
-    default String weaponSetCOX() {
+    default String weaponSetCOX()
+    {
         return "22978, 12006, 11889";
     }
 
@@ -2472,7 +2662,8 @@ public interface CustomConfig extends Config {
             position = 500,
             section = zulrah
     )
-    default FontType fontTypeZulrah() {
+    default FontType fontTypeZulrah()
+    {
         return FontType.SMALL;
     }
 
@@ -2483,7 +2674,8 @@ public interface CustomConfig extends Config {
             position = 501,
             section = zulrah
     )
-    default boolean textOutlineZulrah() {
+    default boolean textOutlineZulrah()
+    {
         return false;
     }
 
@@ -2499,7 +2691,8 @@ public interface CustomConfig extends Config {
             min = 1
     )
     @Units("px")
-    default int outlineWidthZulrah() {
+    default int outlineWidthZulrah()
+    {
         return 2;
     }
 
@@ -2516,7 +2709,8 @@ public interface CustomConfig extends Config {
             min = 1
     )
     @Units("%")
-    default int fillAlphaZulrah() {
+    default int fillAlphaZulrah()
+    {
         return 15;
     }
 
@@ -2527,7 +2721,8 @@ public interface CustomConfig extends Config {
             position = 0,
             section = zulrah
     )
-    default boolean phaseTickCounterZulrah() {
+    default boolean phaseTickCounterZulrah()
+    {
         return false;
     }
 
@@ -2538,7 +2733,8 @@ public interface CustomConfig extends Config {
             position = 0,
             section = zulrah
     )
-    default boolean attackTickCounterZulrah() {
+    default boolean attackTickCounterZulrah()
+    {
         return false;
     }
 
@@ -2550,7 +2746,8 @@ public interface CustomConfig extends Config {
             section = zulrah
     )
     @Alpha
-    default Color tickCounterColorsZulrah() {
+    default Color tickCounterColorsZulrah()
+    {
         return Color.WHITE;
     }
 
@@ -2561,7 +2758,8 @@ public interface CustomConfig extends Config {
             position = 3,
             section = zulrah
     )
-    default boolean totalTickCounterZulrah() {
+    default boolean totalTickCounterZulrah()
+    {
         return false;
     }
 
@@ -2572,7 +2770,8 @@ public interface CustomConfig extends Config {
             position = 4,
             section = zulrah
     )
-    default boolean displayZulrahTile() {
+    default boolean displayZulrahTile()
+    {
         return false;
     }
 
@@ -2584,7 +2783,8 @@ public interface CustomConfig extends Config {
             section = zulrah
     )
     @Alpha
-    default Color zulrahTileColor() {
+    default Color zulrahTileColor()
+    {
         return Color.LIGHT_GRAY;
     }
 
@@ -2595,7 +2795,8 @@ public interface CustomConfig extends Config {
             position = 10,
             section = zulrah
     )
-    default boolean prayerHelperZulrah() {
+    default boolean prayerHelperZulrah()
+    {
         return true;
     }
 
@@ -2606,7 +2807,8 @@ public interface CustomConfig extends Config {
             position = 11,
             section = zulrah
     )
-    default boolean prayerMarkerZulrah() {
+    default boolean prayerMarkerZulrah()
+    {
         return true;
     }
 
@@ -2617,7 +2819,8 @@ public interface CustomConfig extends Config {
             position = 12,
             section = zulrah
     )
-    default boolean prayerConservationZulrah() {
+    default boolean prayerConservationZulrah()
+    {
         return false;
     }
 
@@ -2628,7 +2831,8 @@ public interface CustomConfig extends Config {
             position = 13,
             section = zulrah
     )
-    default boolean standLocationsZulrah() {
+    default boolean standLocationsZulrah()
+    {
         return true;
     }
 
@@ -2640,7 +2844,8 @@ public interface CustomConfig extends Config {
             section = zulrah
     )
     @Alpha
-    default Color standAndNextTileColorZulrah() {
+    default Color standAndNextTileColorZulrah()
+    {
         return Color.GRAY;
     }
 
@@ -2652,7 +2857,8 @@ public interface CustomConfig extends Config {
             section = zulrah
     )
     @Alpha
-    default Color standTileColorZulrah() {
+    default Color standTileColorZulrah()
+    {
         return Color.CYAN;
     }
 
@@ -2664,7 +2870,8 @@ public interface CustomConfig extends Config {
             section = zulrah
     )
     @Alpha
-    default Color nextTileColorZulrah() {
+    default Color nextTileColorZulrah()
+    {
         return Color.GREEN;
     }
 
@@ -2675,7 +2882,8 @@ public interface CustomConfig extends Config {
             position = 17,
             section = zulrah
     )
-    default boolean stallLocationsZulrah() {
+    default boolean stallLocationsZulrah()
+    {
         return false;
     }
 
@@ -2687,7 +2895,8 @@ public interface CustomConfig extends Config {
             section = zulrah
     )
     @Alpha
-    default Color stallTileColorZulrah() {
+    default Color stallTileColorZulrah()
+    {
         return Color.PINK;
     }
 
@@ -2698,7 +2907,8 @@ public interface CustomConfig extends Config {
             position = 30,
             section = zulrah
     )
-    default DisplayType phaseDisplayTypeZulrah() {
+    default DisplayType phaseDisplayTypeZulrah()
+    {
         return DisplayType.BOTH;
     }
 
@@ -2709,7 +2919,8 @@ public interface CustomConfig extends Config {
             position = 31,
             section = zulrah
     )
-    default DisplayMode phaseDisplayModeZulrah() {
+    default DisplayMode phaseDisplayModeZulrah()
+    {
         return DisplayMode.BOTH;
     }
 
@@ -2720,7 +2931,8 @@ public interface CustomConfig extends Config {
             position = 32,
             section = zulrah
     )
-    default boolean phaseRotationNameZulrah() {
+    default boolean phaseRotationNameZulrah()
+    {
         return false;
     }
 
@@ -2731,7 +2943,8 @@ public interface CustomConfig extends Config {
             position = 33,
             section = zulrah
     )
-    default boolean phaseHatsZulrah() {
+    default boolean phaseHatsZulrah()
+    {
         return true;
     }
 
@@ -2742,7 +2955,8 @@ public interface CustomConfig extends Config {
             position = 34,
             section = zulrah
     )
-    default boolean phaseTagsZulrah() {
+    default boolean phaseTagsZulrah()
+    {
         return true;
     }
 
@@ -2753,7 +2967,8 @@ public interface CustomConfig extends Config {
             position = 40,
             section = zulrah
     )
-    default boolean instanceTimerZulrah() {
+    default boolean instanceTimerZulrah()
+    {
         return false;
     }
 
@@ -2764,7 +2979,8 @@ public interface CustomConfig extends Config {
             position = 41,
             section = zulrah
     )
-    default SnakelingSettings snakelingSetting() {
+    default SnakelingSettings snakelingSetting()
+    {
         return SnakelingSettings.OFF;
     }
 
@@ -2775,7 +2991,8 @@ public interface CustomConfig extends Config {
             position = 42,
             section = zulrah
     )
-    default Keybind snakelingMesHotkey() {
+    default Keybind snakelingMesHotkey()
+    {
         return Keybind.NOT_SET;
     }
 
@@ -2786,7 +3003,8 @@ public interface CustomConfig extends Config {
             position = 43,
             section = zulrah
     )
-    default boolean displayToxicClouds() {
+    default boolean displayToxicClouds()
+    {
         return false;
     }
 
@@ -2798,7 +3016,8 @@ public interface CustomConfig extends Config {
             section = zulrah
     )
     @Alpha
-    default Color toxicCloudsColor() {
+    default Color toxicCloudsColor()
+    {
         return Color.GREEN;
     }
 
@@ -2809,7 +3028,8 @@ public interface CustomConfig extends Config {
             position = 45,
             section = zulrah
     )
-    default boolean displayProjectilesZulrah() {
+    default boolean displayProjectilesZulrah()
+    {
         return false;
     }
 
@@ -2821,10 +3041,773 @@ public interface CustomConfig extends Config {
             section = zulrah
     )
     @Alpha
-    default Color projectilesColorzulrah() {
+    default Color projectilesColorzulrah()
+    {
         return Color.LIGHT_GRAY;
     }
 
+    //Inferno
+
+    @ConfigItem(
+            position = 0,
+            keyName = "prayerDisplayMode",
+            name = "Prayer Display Mode",
+            description = "Display prayer indicator in the prayer tab or in the bottom right corner of the screen",
+            section = inferno
+    )
+    default InfernoPrayerDisplayMode prayerDisplayMode()
+    {
+        return InfernoPrayerDisplayMode.BOTH;
+    }
+
+    @ConfigItem(
+            position = 1,
+            keyName = "indicateWhenPrayingCorrectly",
+            name = "Indicate When Praying Correctly",
+            description = "Indicate the correct prayer, even if you are already praying that prayer",
+            section = inferno
+    )
+    default boolean indicateWhenPrayingCorrectly()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 2,
+            keyName = "descendingBoxesInferno",
+            name = "Descending Boxes",
+            description = "Draws timing boxes above the prayer icons, as if you were playing Piano Tiles",
+            section = inferno
+    )
+    default boolean descendingBoxesInferno()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 3,
+            keyName = "indicateNonPriorityDescendingBoxesInferno",
+            name = "Indicate Non-Priority Boxes",
+            description = "Render descending boxes for prayers that are not the priority prayer for that tick",
+            section = inferno
+    )
+    default boolean indicateNonPriorityDescendingBoxesInferno()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 4,
+            keyName = "alwaysShowPrayerHelperInferno",
+            name = "Always Show Prayer Helper",
+            description = "Render prayer helper at all time, even when other inventory tabs are open.",
+            section = inferno
+    )
+    default boolean alwaysShowPrayerHelperInferno()
+    {
+        return false;
+    }
+
+    @ConfigItem(
+            position = 4,
+            keyName = "safespotDisplayMode",
+            name = "Tile Safespots",
+            description = "Indicate safespots on the ground: safespot (white), pray melee (red), pray range (green), pray magic (blue) and combinations of those",
+            section = inferno
+    )
+    default InfernoSafespotDisplayMode safespotDisplayMode()
+    {
+        return InfernoSafespotDisplayMode.AREA;
+    }
+
+    @ConfigItem(
+            position = 5,
+            keyName = "safespotsCheckSize",
+            name = "Tile Safespots Check Size",
+            description = "The size of the area around the player that should be checked for safespots (SIZE x SIZE area)",
+            section = inferno
+    )
+    default int safespotsCheckSize()
+    {
+        return 6;
+    }
+
+    @ConfigItem(
+            position = 6,
+            keyName = "indicateNonSafespotted",
+            name = "Non-safespotted NPC's Overlay",
+            description = "Red overlay for NPC's that can attack you",
+            section = inferno
+    )
+    default boolean indicateNonSafespotted()
+    {
+        return false;
+    }
+
+    @ConfigItem(
+            position = 7,
+            keyName = "indicateTemporarySafespotted",
+            name = "Temporary safespotted NPC's Overlay",
+            description = "Orange overlay for NPC's that have to move to attack you",
+            section = inferno
+    )
+    default boolean indicateTemporarySafespotted()
+    {
+        return false;
+    }
+
+    @ConfigItem(
+            position = 8,
+            keyName = "indicateSafespotted",
+            name = "Safespotted NPC's Overlay",
+            description = "Green overlay for NPC's that are safespotted (can't attack you)",
+            section = inferno
+    )
+    default boolean indicateSafespotted()
+    {
+        return false;
+    }
+
+    @ConfigItem(
+            position = 20,
+            keyName = "waveDisplay",
+            name = "Wave Display",
+            description = "Shows monsters that will spawn on the selected wave(s).",
+            section = inferno
+    )
+    default InfernoWaveDisplayMode waveDisplay()
+    {
+        return InfernoWaveDisplayMode.BOTH;
+    }
+
+    @ConfigItem(
+            position = 21,
+            keyName = "npcNaming",
+            name = "NPC Naming",
+            description = "Simple (ex: Bat) or Complex (ex: Jal-MejRah) NPC naming",
+            section = inferno
+    )
+    default InfernoNamingDisplayMode npcNaming()
+    {
+        return InfernoNamingDisplayMode.SIMPLE;
+    }
+
+    @ConfigItem(
+            position = 22,
+            keyName = "npcLevels",
+            name = "NPC Levels",
+            description = "Show the combat level of the NPC next to their name",
+            section = inferno
+    )
+    default boolean npcLevels()
+    {
+        return false;
+    }
+
+    @ConfigItem(
+            position = 23,
+            keyName = "getWaveOverlayHeaderColor",
+            name = "Wave Header",
+            description = "Color for Wave Header",
+            section = inferno
+    )
+    default Color getWaveOverlayHeaderColor()
+    {
+        return Color.ORANGE;
+    }
+
+    @ConfigItem(
+            position = 24,
+            keyName = "getWaveTextColor",
+            name = "Wave Text Color",
+            description = "Color for Wave Texts",
+            section = inferno
+    )
+    default Color getWaveTextColor()
+    {
+        return Color.WHITE;
+    }
+
+    @ConfigItem(
+            position = 30,
+            keyName = "indicateObstacles",
+            name = "Obstacles",
+            description = "Indicate obstacles that NPC's cannot pass through",
+            section = inferno
+    )
+    default boolean indicateObstacles()
+    {
+        return false;
+    }
+
+    @ConfigItem(
+            position = 31,
+            keyName = "spawnTimerInfobox",
+            name = "Spawn Timer Infobox",
+            description = "Display an Infobox that times spawn sets during Zuk fight.",
+            section = inferno
+    )
+    default boolean spawnTimerInfobox()
+    {
+        return false;
+    }
+
+    @ConfigItem(
+            position = 40,
+            keyName = "indicateNibblers",
+            name = "Indicate Nibblers",
+            description = "Indicates nibblers that are alive",
+            section = inferno
+    )
+    default boolean indicateNibblers()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 41,
+            keyName = "indicateCentralNibbler",
+            name = "Indicate Central Nibbler",
+            description = "Indicate the most central nibbler. If multiple nibblers will freeze the same amount of other nibblers, " +
+                    "the nibbler closest to the player's location is chosen.",
+            section = inferno
+    )
+    default boolean indicateCentralNibbler()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 50,
+            keyName = "prayerBat",
+            name = "Prayer Helper Bat",
+            description = "Indicate the correct prayer when this NPC attacks",
+            section = inferno
+    )
+    default boolean prayerBat()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 51,
+            keyName = "ticksOnNpcBat",
+            name = "Ticks on NPC Bat",
+            description = "Draws the amount of ticks before an NPC is going to attack on the NPC",
+            section = inferno
+    )
+    default boolean ticksOnNpcBat()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 52,
+            keyName = "safespotsBat",
+            name = "Safespots Bat",
+            description = "Enable or disable safespot calculation for this specific NPC. 'Tile Safespots' in the 'Safespots' category needs to be turned on for this to take effect.",
+            section = inferno
+    )
+    default boolean safespotsBat()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 53,
+            keyName = "indicateNpcPositionBat",
+            name = "Indicate Main Tile Bat",
+            description = "Indicate the main tile for multi-tile NPC's. This tile is used for and pathfinding.",
+            section = inferno
+    )
+    default boolean indicateNpcPositionBat()
+    {
+        return false;
+    }
+
+    @ConfigItem(
+            position = 60,
+            keyName = "prayerBlob",
+            name = "Prayer Helper Blob",
+            description = "Indicate the correct prayer when this NPC attacks",
+            section = inferno
+    )
+    default boolean prayerBlob()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 61,
+            keyName = "indicateBlobDetectionTick",
+            name = "Indicate Blob Detection Tick",
+            description = "Show a prayer indicator (default: magic) for the tick on which the blob will detect prayer",
+            section = inferno
+    )
+    default boolean indicateBlobDetectionTick()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 62,
+            keyName = "indicateBlobDeathLocation",
+            name = "Indicate Blob Death Location",
+            description = "Highlight the death tiles with a tick countdown until mini-blobs spawn",
+            section = inferno
+    )
+    default boolean indicateBlobDeathLocation()
+    {
+        return false;
+    }
+
+    @ConfigItem(
+            position = 63,
+            keyName = "getBlobDeathLocationColor",
+            name = "Blob Death Color",
+            description = "Color for blob death location outline",
+            section = inferno
+    )
+    default Color getBlobDeathLocationColor()
+    {
+        return Color.ORANGE;
+    }
+
+    @ConfigItem(
+            position = 64,
+            keyName = "blobDeathLocationFade",
+            name = "Fade Tile Blob",
+            description = "Fades the death tile for a smoother transition.",
+            section = inferno
+    )
+    default boolean blobDeathLocationFade()
+    {
+        return true;
+    }
+
+
+    @ConfigItem(
+            position = 65,
+            keyName = "ticksOnNpcBlob",
+            name = "Ticks on NPC  Blob",
+            description = "Draws the amount of ticks before an NPC is going to attack on the NPC",
+            section = inferno
+    )
+    default boolean ticksOnNpcBlob()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 66,
+            keyName = "safespotsBlob",
+            name = "Safespots Blob",
+            description = "Enable or disable safespot calculation for this specific NPC. 'Tile Safespots' in the 'Safespots' category needs to be turned on for this to take effect.",
+            section = inferno
+    )
+    default boolean safespotsBlob()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 67,
+            keyName = "indicateNpcPositionBlob",
+            name = "Indicate Main Tile Blob",
+            description = "Indicate the main tile for multi-tile NPC's. This tile is used for pathfinding.",
+            section = inferno
+    )
+    default boolean indicateNpcPositionBlob()
+    {
+        return false;
+    }
+
+
+    @ConfigItem(
+            position = 70,
+            keyName = "prayerMeleer",
+            name = "Prayer Helper Meleer",
+            description = "Indicate the correct prayer when this NPC attacks",
+            section = inferno
+    )
+    default boolean prayerMeleer()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 71,
+            keyName = "ticksOnNpcMeleer",
+            name = "Ticks on NPC Meleer",
+            description = "Draws the amount of ticks before an NPC is going to attack on the NPC",
+            section = inferno
+    )
+    default boolean ticksOnNpcMeleer()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 72,
+            keyName = "ticksOnNpcMeleerDig",
+            name = "Dig Timer",
+            description = "Draws the amount of ticks before the melee will begin the dig animation.\n" +
+                    "The amount of time is currently unknown. Plugin will count up to 50 \n" +
+                    "then count up with the danger overlay. This should give a general idea of the time. \n" +
+                    "Once more data can be collected this can be improved",
+            section = inferno
+    )
+    default boolean ticksOnNpcMeleerDig()
+    {
+        return false;
+    }
+
+    @Range(
+            min = 1,
+            max = 50
+    )
+    @ConfigItem(
+            position = 73,
+            keyName = "digTimerThreshold",
+            name = "Tick Draw Threshold",
+            description = "Number at which the dig timer should be drawn",
+            section = inferno
+    )
+    default int digTimerThreshold()
+    {
+        return 20;
+    }
+
+    @Range(
+            min = 30,
+            max = 70
+    )
+    @ConfigItem(
+            position = 74,
+            keyName = "digTimerDangerThreshold",
+            name = "Tick Danger Threshold",
+            description = "Number at which the dig timer should be dangerous",
+            section = inferno
+    )
+    default int digTimerDangerThreshold()
+    {
+        return 50;
+    }
+
+
+    @ConfigItem(
+            position = 75,
+            keyName = "getMeleeDigSafeColor",
+            name = "Dig Safe Color",
+            description = "Color for melee when can not dig",
+            section = inferno
+    )
+    default Color getMeleeDigSafeColor()
+    {
+        return Color.LIGHT_GRAY;
+    }
+
+    @ConfigItem(
+            position = 76,
+            keyName = "getMeleeDigDangerColor",
+            name = "Dig Danger Color",
+            description = "Color for melee when it can dig",
+            section = inferno
+    )
+    default Color getMeleeDigDangerColor()
+    {
+        return Color.ORANGE;
+    }
+
+    @Range(min = 10,
+            max = 48)
+    @ConfigItem(
+            position = 77,
+            keyName = "getMeleeDigFontSize",
+            name = "Font size Meleer",
+            description = "Font size to use under the melee",
+            section = inferno
+    )
+    default int getMeleeDigFontSize()
+    {
+        return 11;
+    }
+
+    @ConfigItem(
+            position = 78,
+            keyName = "safespotsMeleer",
+            name = "Safespots Meleer",
+            description = "Enable or disable safespot calculation for this specific NPC. 'Tile Safespots' in the 'Safespots' category needs to be turned on for this to take effect.",
+            section = inferno
+    )
+    default boolean safespotsMeleer()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 79,
+            keyName = "indicateNpcPositionMeleer",
+            name = "Indicate Main Tile Meleer",
+            description = "Indicate the main tile for multi-tile NPC's. This tile is used for pathfinding.",
+            section = inferno
+    )
+    default boolean indicateNpcPositionMeleer()
+    {
+        return false;
+    }
+
+    @ConfigItem(
+            position = 90,
+            keyName = "prayerRanger",
+            name = "Prayer Helper Ranger",
+            description = "Indicate the correct prayer when this NPC attacks",
+            section = inferno
+    )
+    default boolean prayerRanger()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 91,
+            keyName = "ticksOnNpcRanger",
+            name = "Ticks on NPC Ranger",
+            description = "Draws the amount of ticks before an NPC is going to attack on the NPC",
+            section = inferno
+    )
+    default boolean ticksOnNpcRanger()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 92,
+            keyName = "safespotsRanger",
+            name = "Safespots Ranger",
+            description = "Enable or disable safespot calculation for this specific NPC. 'Tile Safespots' in the 'Safespots' category needs to be turned on for this to take effect.",
+            section = inferno
+    )
+    default boolean safespotsRanger()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 93,
+            keyName = "indicateNpcPositionRanger",
+            name = "Indicate Main Tile Ranger",
+            description = "Indicate the main tile for multi-tile NPC's. This tile is used for pathfinding.",
+            section = inferno
+    )
+    default boolean indicateNpcPositionRanger()
+    {
+        return false;
+    }
+
+    @ConfigItem(
+            position = 100,
+            keyName = "prayerMage",
+            name = "Prayer Helper Ranger",
+            description = "Indicate the correct prayer when this NPC attacks",
+            section = inferno
+    )
+    default boolean prayerMage()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 101,
+            keyName = "ticksOnNpcMage",
+            name = "Ticks on NPC Mage",
+            description = "Draws the amount of ticks before an NPC is going to attack on the NPC",
+            section = inferno
+    )
+    default boolean ticksOnNpcMage()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 102,
+            keyName = "safespotsMage",
+            name = "Safespots Mage",
+            description = "Enable or disable safespot calculation for this specific NPC. 'Tile Safespots' in the 'Safespots' category needs to be turned on for this to take effect.",
+            section = inferno
+    )
+    default boolean safespotsMage()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 103,
+            keyName = "indicateNpcPositionMage",
+            name = "Indicate Main Tile Mage",
+            description = "Indicate the main tile for multi-tile NPC's. This tile is used for pathfinding.",
+            section = inferno
+    )
+    default boolean indicateNpcPositionMage()
+    {
+        return false;
+    }
+
+    @ConfigItem(
+            position = 110,
+            keyName = "prayerHealersJad",
+            name = "Prayer Helper Jad Healer",
+            description = "Indicate the correct prayer when this NPC attacks",
+            section = inferno
+    )
+    default boolean prayerHealerJad()
+    {
+        return false;
+    }
+
+    @ConfigItem(
+            position = 111,
+            keyName = "ticksOnNpcHealersJad",
+            name = "Ticks on NPC Jad Healer",
+            description = "Draws the amount of ticks before an NPC is going to attack on the NPC",
+            section = inferno
+    )
+    default boolean ticksOnNpcHealerJad()
+    {
+        return false;
+    }
+
+    @ConfigItem(
+            position = 112,
+            keyName = "safespotsHealersJad",
+            name = "Safespots Jad Healer",
+            description = "Enable or disable safespot calculation for this specific NPC. 'Tile Safespots' in the 'Safespots' category needs to be turned on for this to take effect.",
+            section = inferno
+    )
+    default boolean safespotsHealerJad()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 113,
+            keyName = "indicateActiveHealersJad",
+            name = "Indicate Active Jad Healers",
+            description = "Indicate healers that are still healing Jad",
+            section = inferno
+    )
+    default boolean indicateActiveHealerJad()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 120,
+            keyName = "prayerJad",
+            name = "Prayer Helper Jad",
+            description = "Indicate the correct prayer when this NPC attacks",
+            section = inferno
+    )
+    default boolean prayerJad()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 121,
+            keyName = "ticksOnNpcJad",
+            name = "Ticks on NPC Jad",
+            description = "Draws the amount of ticks before an NPC is going to attack on the NPC",
+            section = inferno
+    )
+    default boolean ticksOnNpcJad()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 122,
+            keyName = "safespotsJad",
+            name = "Safespots (Melee Range Only) Jad",
+            description = "Enable or disable safespot calculation for this specific NPC. 'Tile Safespots' in the 'Safespots' category needs to be turned on for this to take effect.",
+            section = inferno
+    )
+    default boolean safespotsJad()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 130,
+            keyName = "indicateActiveHealersZuk",
+            name = "Indicate Active Zuk Healers (UNTESTED)",
+            description = "Indicate healers that are still healing Zuk",
+            section = inferno
+    )
+    default boolean indicateActiveHealerZuk()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 140,
+            keyName = "ticksOnNpcZuk",
+            name = "Ticks on NPC Zuk",
+            description = "Draws the amount of ticks before an NPC is going to attack on the NPC",
+            section = inferno
+    )
+    default boolean ticksOnNpcZuk()
+    {
+        return true;
+    }
+
+    @ConfigItem(
+            position = 141,
+            keyName = "safespotsZukShieldBeforeHealers",
+            name = "Safespots Zuk(Before Healers) ",
+            description = "Indicate the zuk shield safespots. 'Tile Safespots' in the 'Safespots' category needs to be turned on for this to take effect. Shield must go back and forth at least 1 time before the predict option will work.",
+            section = inferno
+    )
+    default InfernoZukShieldDisplayMode safespotsZukShieldBeforeHealers()
+    {
+        return InfernoZukShieldDisplayMode.PREDICT;
+    }
+
+    @ConfigItem(
+            position = 142,
+            keyName = "safespotsZukShieldAfterHealers",
+            name = "Safespots Zuk(After Healers)",
+            description = "Indicate the zuk shield safespots. 'Tile Safespots' in the 'Safespots' category needs to be turned on for this to take effect.",
+            section = inferno
+    )
+    default InfernoZukShieldDisplayMode safespotsZukShieldAfterHealers()
+    {
+        return InfernoZukShieldDisplayMode.LIVE;
+    }
+
+    @ConfigItem(
+            position = 143,
+            keyName = "hideTzKalZukDeath",
+            name = "Hide On Death",
+            description = "Hide TzKal-Zuk on death animation",
+            section = inferno
+    )
+    default boolean hideZukDeath()
+    {
+        return false;
+    }
+
+    @ConfigItem(
+            position = 144,
+            keyName = "ticksOnNpcZukShield",
+            name = "Ticks on Zuk Shield",
+            description = "Draws the amount of ticks before Zuk attacks on the floating shield",
+            section = inferno
+    )
+    default boolean ticksOnNpcZukShield()
+    {
+        return false;
+    }
 
     //Cerberus
 
@@ -2835,7 +3818,8 @@ public interface CustomConfig extends Config {
             position = 0,
             section = cerberus
     )
-    default boolean drawGhostTiles() {
+    default boolean drawGhostTiles()
+    {
         return false;
     }
 
@@ -2847,7 +3831,8 @@ public interface CustomConfig extends Config {
             position = 1,
             section = cerberus
     )
-    default boolean calculateAutoAttackPrayer() {
+    default boolean calculateAutoAttackPrayer()
+    {
         return false;
     }
 
@@ -2860,7 +3845,8 @@ public interface CustomConfig extends Config {
             position = 10,
             section = cerberus
     )
-    default boolean showCurrentAttackCerberus() {
+    default boolean showCurrentAttackCerberus()
+    {
         return false;
     }
 
@@ -2871,7 +3857,8 @@ public interface CustomConfig extends Config {
             position = 11,
             section = cerberus
     )
-    default boolean showCurrentAttackTimerCerberus() {
+    default boolean showCurrentAttackTimerCerberus()
+    {
         return false;
     }
 
@@ -2884,7 +3871,8 @@ public interface CustomConfig extends Config {
             position = 20,
             section = cerberus
     )
-    default boolean showUpcomingAttacksCerberus() {
+    default boolean showUpcomingAttacksCerberus()
+    {
         return false;
     }
 
@@ -2899,7 +3887,8 @@ public interface CustomConfig extends Config {
             position = 21,
             section = cerberus
     )
-    default int amountOfAttacksShown() {
+    default int amountOfAttacksShown()
+    {
         return 4;
     }
 
@@ -2910,7 +3899,8 @@ public interface CustomConfig extends Config {
             position = 22,
             section = cerberus
     )
-    default boolean reverseUpcomingAttacksCerberus() {
+    default boolean reverseUpcomingAttacksCerberus()
+    {
         return false;
     }
 
@@ -2922,7 +3912,8 @@ public interface CustomConfig extends Config {
             position = 23,
             section = cerberus
     )
-    default boolean showUpcomingAttackNumberCerberus() {
+    default boolean showUpcomingAttackNumberCerberus()
+    {
         return false;
     }
 
@@ -2933,7 +3924,8 @@ public interface CustomConfig extends Config {
             position = 24,
             section = cerberus
     )
-    default InfoBoxOrientation upcomingAttacksOrientationCerberus() {
+    default InfoBoxOrientation upcomingAttacksOrientationCerberus()
+    {
         return InfoBoxOrientation.VERTICAL;
     }
 
@@ -2944,7 +3936,8 @@ public interface CustomConfig extends Config {
             position = 25,
             section = cerberus
     )
-    default InfoBoxComponentSize infoBoxComponentSizeCerberus() {
+    default InfoBoxComponentSize infoBoxComponentSizeCerberus()
+    {
         return InfoBoxComponentSize.SMALL;
     }
 
@@ -2957,7 +3950,8 @@ public interface CustomConfig extends Config {
             position = 30,
             section = cerberus
     )
-    default boolean guitarHeroModeCerberus() {
+    default boolean guitarHeroModeCerberus()
+    {
         return false;
     }
 
@@ -2972,9 +3966,11 @@ public interface CustomConfig extends Config {
             position = 31,
             section = cerberus
     )
-    default int guitarHeroTicksCerberus() {
+    default int guitarHeroTicksCerberus()
+    {
         return 4;
     }
+
 
 
     @Alpha
@@ -2985,7 +3981,8 @@ public interface CustomConfig extends Config {
             description = "Sets color of npc highlights",
             section = toaGen
     )
-    default Color trueTileColorToa() {
+    default Color trueTileColorToa()
+    {
         return Color.BLACK;
     }
 
@@ -2997,7 +3994,8 @@ public interface CustomConfig extends Config {
             description = "Sets the fill color of npc highlights",
             section = toaGen
     )
-    default Color trueTileFillColorToa() {
+    default Color trueTileFillColorToa()
+    {
         return new Color(0, 255, 255, 20);
     }
 
@@ -3009,7 +4007,8 @@ public interface CustomConfig extends Config {
             description = "Sets color of dangerTiles",
             section = toaGen
     )
-    default Color dangerTileColorToa() {
+    default Color dangerTileColorToa()
+    {
         return Color.RED;
     }
 
@@ -3021,7 +4020,8 @@ public interface CustomConfig extends Config {
             description = "Sets the fill color of npc highlights",
             section = toaGen
     )
-    default Color dangerTileFillColorToa() {
+    default Color dangerTileFillColorToa()
+    {
         return new Color(255, 0, 0, 20);
     }
 
@@ -3032,7 +4032,8 @@ public interface CustomConfig extends Config {
             description = "Dev tool to show info about Toa",
             section = toaGen
     )
-    default boolean toaDebug() {
+    default boolean toaDebug()
+    {
         return false;
     }
 
@@ -3066,7 +4067,8 @@ public interface CustomConfig extends Config {
             description = "Highlights true tile of orbs.",
             section = toaHet
     )
-    default boolean orbTrueTile() {
+    default boolean orbTrueTile()
+    {
         return true;
     }
 
@@ -3089,7 +4091,8 @@ public interface CustomConfig extends Config {
             description = "Highlights true tile of wave.",
             section = toaCrondis
     )
-    default boolean waveTrueTile() {
+    default boolean waveTrueTile()
+    {
         return true;
     }
 
@@ -3100,7 +4103,8 @@ public interface CustomConfig extends Config {
             description = "Highlights true tile of boulder.",
             section = toaCrondis
     )
-    default boolean boulderTrueTile() {
+    default boolean boulderTrueTile()
+    {
         return true;
     }
 
@@ -3111,7 +4115,8 @@ public interface CustomConfig extends Config {
             description = "Highlights tile of poison.",
             section = toaCrondis
     )
-    default boolean poisonTileToa() {
+    default boolean poisonTileToa()
+    {
         return true;
     }
 
@@ -3122,7 +4127,8 @@ public interface CustomConfig extends Config {
             description = "Highlights tiles of Kephri's attack.",
             section = toaScarabas
     )
-    default boolean kephriAttackRadius() {
+    default boolean kephriAttackRadius()
+    {
         return true;
     }
 
@@ -3133,7 +4139,8 @@ public interface CustomConfig extends Config {
             description = "Highlights flies",
             section = toaScarabas
     )
-    default boolean fliesOnCharacter() {
+    default boolean fliesOnCharacter()
+    {
         return true;
     }
 
@@ -3144,7 +4151,8 @@ public interface CustomConfig extends Config {
             description = "Hide unattackable swarms",
             section = toaScarabas
     )
-    default boolean hideUnattackableSwams() {
+    default boolean hideUnattackableSwams()
+    {
         return true;
     }
 
@@ -3155,7 +4163,8 @@ public interface CustomConfig extends Config {
             description = "Highlights tiles of Boulder attack.",
             section = toaScarabas
     )
-    default boolean scarabasAttackRadius() {
+    default boolean scarabasAttackRadius()
+    {
         return true;
     }
 
@@ -3166,7 +4175,8 @@ public interface CustomConfig extends Config {
             description = "Solve matching puzzles.",
             section = toaScarabas
     )
-    default boolean scarabasPuzzleSolver() {
+    default boolean scarabasPuzzleSolver()
+    {
         return true;
     }
 
@@ -3177,7 +4187,8 @@ public interface CustomConfig extends Config {
             description = "Highlights true tile of boulders.",
             section = toaApmeken
     )
-    default boolean bouldersTrueTileBaba() {
+    default boolean bouldersTrueTileBaba()
+    {
         return true;
     }
 
@@ -3188,7 +4199,8 @@ public interface CustomConfig extends Config {
             description = "Highlights the shockwave Radius",
             section = toaApmeken
     )
-    default boolean shockwaveRadiusToa() {
+    default boolean shockwaveRadiusToa()
+    {
         return true;
     }
 
@@ -3199,7 +4211,8 @@ public interface CustomConfig extends Config {
             description = "Highlights the falling boulders",
             section = toaApmeken
     )
-    default boolean boulderDangerToa() {
+    default boolean boulderDangerToa()
+    {
         return true;
     }
 
@@ -3210,7 +4223,8 @@ public interface CustomConfig extends Config {
             description = "Highlights the bananas",
             section = toaApmeken
     )
-    default boolean bananasToa() {
+    default boolean bananasToa()
+    {
         return true;
     }
 
@@ -3221,7 +4235,8 @@ public interface CustomConfig extends Config {
             description = "Highlights the sacrophagus flame",
             section = toaApmeken
     )
-    default boolean sacrophagusToa() {
+    default boolean sacrophagusToa()
+    {
         return true;
     }
 
@@ -3232,9 +4247,7 @@ public interface CustomConfig extends Config {
             description = "Renders ticks till next attack on baba.",
             section = toaApmeken
     )
-    default boolean babaRenderTicks() {
-        return true;
-    }
+    default boolean babaRenderTicks() {return true;}
 
     @ConfigItem(
             position = 11,
@@ -3243,7 +4256,8 @@ public interface CustomConfig extends Config {
             description = "Display prayer indicator in the prayer tab or in the bottom right corner of the screen",
             section = toaPrayer
     )
-    default boolean prayerHelperToa() {
+    default boolean prayerHelperToa()
+    {
         return true;
     }
 
@@ -3254,7 +4268,8 @@ public interface CustomConfig extends Config {
             description = "Draws timing boxes above the prayer icons, as if you were playing Guitar Hero",
             section = toaPrayer
     )
-    default boolean descendingBoxesToa() {
+    default boolean descendingBoxesToa()
+    {
         return true;
     }
 
@@ -3265,7 +4280,8 @@ public interface CustomConfig extends Config {
             description = "Render prayer helper at all time, even when other inventory tabs are open.",
             section = toaPrayer
     )
-    default boolean alwaysShowPrayerHelperToa() {
+    default boolean alwaysShowPrayerHelperToa()
+    {
         return true;
     }
 
@@ -3277,7 +4293,8 @@ public interface CustomConfig extends Config {
             description = "Color for descending box normal",
             section = toaPrayer
     )
-    default Color prayerColorToa() {
+    default Color prayerColorToa()
+    {
         return Color.ORANGE;
     }
 
@@ -3289,7 +4306,8 @@ public interface CustomConfig extends Config {
             description = "Color for descending box one tick before damage",
             section = toaPrayer
     )
-    default Color prayerColorDangerToa() {
+    default Color prayerColorDangerToa()
+    {
         return Color.RED;
     }
 
@@ -3300,7 +4318,8 @@ public interface CustomConfig extends Config {
             description = "Render descending boxes for prayers that are not the priority prayer for that tick",
             section = toaPrayer
     )
-    default boolean indicateNonPriorityDescendingBoxesToa() {
+    default boolean indicateNonPriorityDescendingBoxesToa()
+    {
         return true;
     }
 
@@ -3311,7 +4330,8 @@ public interface CustomConfig extends Config {
             description = "Renders a prayer infobox for attacks in ToA",
             section = toaPrayer
     )
-    default boolean prayerInfoboxToa() {
+    default boolean prayerInfoboxToa()
+    {
         return true;
     }
 
@@ -3322,7 +4342,8 @@ public interface CustomConfig extends Config {
             description = "Render prayers during the Zebak fight",
             section = toaPrayer
     )
-    default boolean zebakPrayerHelper() {
+    default boolean zebakPrayerHelper()
+    {
         return true;
     }
 
@@ -3333,7 +4354,8 @@ public interface CustomConfig extends Config {
             description = "Shows ticks till ball hits player",
             section = toaWardens
     )
-    default boolean wardenObeliskBallTicks() {
+    default boolean wardenObeliskBallTicks()
+    {
         return true;
     }
 
@@ -3345,7 +4367,8 @@ public interface CustomConfig extends Config {
             description = "",
             section = toaWardens
     )
-    default Color wardenBoulderOutline() {
+    default Color wardenBoulderOutline()
+    {
         return new Color(255, 0, 0, 20);
     }
 
@@ -3358,89 +4381,106 @@ public interface CustomConfig extends Config {
             section = toaWardens
     )
 
-    default Color wadernBoulderFill() {
+    default Color wadernBoulderFill()
+    {
         return new Color(255, 0, 0, 20);
     }
 
     //ENUM
-    enum BLOATTIMEDOWN {
+    enum BLOATTIMEDOWN
+    {
         COUNTUP,
         COUNTDOWN
     }
 
-    enum NYLOTIMEALIVE {
+    enum NYLOTIMEALIVE
+    {
         COUNTUP,
         COUNTDOWN
     }
 
-    enum EXPLOSIVENYLORENDERSTYLE {
+    enum EXPLOSIVENYLORENDERSTYLE
+    {
         TILE,
         RECOLOR_TICK
     }
 
-    enum AGGRESSIVENYLORENDERSTYLE {
+    enum AGGRESSIVENYLORENDERSTYLE
+    {
         TILE,
         HULL
     }
 
-    enum XARPUS_EXHUMED_COUNT {
+    enum XARPUS_EXHUMED_COUNT
+    {
         OFF,
         DOWN,
         UP;
     }
 
-    enum XARPUS_LINE_OF_SIGHT {
+    enum XARPUS_LINE_OF_SIGHT
+    {
         OFF,
         SQUARE,
         MELEE_TILES;
     }
 
-    enum VERZIKBALLTILE {
+    enum VERZIKBALLTILE
+    {
         TILE,
         AREA
     }
 
-    public static enum SnakelingSettings {
+    public static enum SnakelingSettings
+    {
         OFF("Off"),
         MES("Remove Att. Op."),
         ENTITY("Entity Hider");
 
         private final String name;
 
-        public String toString() {
+        public String toString()
+        {
             return this.name;
         }
 
-        private SnakelingSettings(String name) {
+        private SnakelingSettings(String name)
+        {
             this.name = name;
         }
 
-        public String getName() {
+        public String getName()
+        {
             return this.name;
         }
     }
 
-    public static enum DisplayMode {
+    public static enum DisplayMode
+    {
         CURRENT("Current"),
         NEXT("Next"),
         BOTH("Both");
 
         private final String name;
 
-        public String toString() {
+        public String toString()
+        {
             return this.name;
         }
 
-        private DisplayMode(String name) {
+        private DisplayMode(String name)
+        {
             this.name = name;
         }
 
-        public String getName() {
+        public String getName()
+        {
             return this.name;
         }
     }
 
-    public static enum DisplayType {
+    public static enum DisplayType
+    {
         OFF("Off"),
         OVERLAY("Overlay"),
         TILE("Tile"),
@@ -3448,22 +4488,26 @@ public interface CustomConfig extends Config {
 
         private final String name;
 
-        public String toString() {
+        public String toString()
+        {
             return this.name;
         }
 
-        private DisplayType(String name) {
+        private DisplayType(String name)
+        {
             this.name = name;
         }
 
-        public String getName() {
+        public String getName()
+        {
             return this.name;
         }
     }
 
     @Getter
     @RequiredArgsConstructor
-    enum InfoBoxOrientation {
+    enum InfoBoxOrientation
+    {
         HORIZONTAL("Horizontal layout", ComponentOrientation.HORIZONTAL),
         VERTICAL("Vertical layout", ComponentOrientation.VERTICAL);
 
@@ -3471,21 +4515,24 @@ public interface CustomConfig extends Config {
         private final ComponentOrientation orientation;
 
         @Override
-        public String toString() {
+        public String toString()
+        {
             return name;
         }
     }
 
     @Getter
     @RequiredArgsConstructor
-    enum InfoBoxComponentSize {
+    enum InfoBoxComponentSize
+    {
         SMALL("Small boxes", 40), MEDIUM("Medium boxes", 60), LARGE("Large boxes", 80);
 
         private final String name;
         private final int size;
 
         @Override
-        public String toString() {
+        public String toString()
+        {
             return name;
         }
     }
