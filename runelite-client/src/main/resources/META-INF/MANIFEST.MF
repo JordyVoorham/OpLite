@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: C:\Development\IntelijProjects\OpLite\runelite-client\src\ma
+ in\java\net\runelite\client\plugins\theatre\CustomPlugin
+
