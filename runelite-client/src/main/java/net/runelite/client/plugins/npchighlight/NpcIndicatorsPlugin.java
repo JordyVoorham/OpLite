@@ -28,7 +28,6 @@ package net.runelite.client.plugins.npchighlight;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.inject.Provides;
-import java.applet.Applet;
 import java.awt.Color;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -46,7 +45,6 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
-import net.runelite.api.GraphicID;
 import net.runelite.api.GraphicsObject;
 import net.runelite.api.KeyCode;
 import net.runelite.api.Menu;
@@ -63,6 +61,7 @@ import net.runelite.api.events.MenuEntryAdded;
 import net.runelite.api.events.NpcChanged;
 import net.runelite.api.events.NpcDespawned;
 import net.runelite.api.events.NpcSpawned;
+import net.runelite.api.gameval.SpotanimID;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
@@ -432,7 +431,7 @@ public class NpcIndicatorsPlugin extends Plugin
 			.setType(MenuAction.RUNELITE)
 			.onClick(e -> SwingUtilities.invokeLater(() ->
 			{
-				RuneliteColorPicker colorPicker = colorPickerManager.create(SwingUtilities.windowForComponent((Applet) client),
+				RuneliteColorPicker colorPicker = colorPickerManager.create(client,
 					Color.WHITE, "Tag Color", false);
 				colorPicker.setOnClose(c ->
 				{
@@ -614,7 +613,7 @@ public class NpcIndicatorsPlugin extends Plugin
 	{
 		final GraphicsObject go = event.getGraphicsObject();
 
-		if (go.getId() == GraphicID.GREY_BUBBLE_TELEPORT)
+		if (go.getId() == SpotanimID.SMOKEPUFF)
 		{
 			teleportGraphicsObjectSpawnedThisTick.add(WorldPoint.fromLocal(client, go.getLocation()));
 		}

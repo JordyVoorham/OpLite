@@ -384,7 +384,7 @@ public interface Client extends OAuthApi, GameEngine
 	 *
 	 * @param id the item ID
 	 * @return the corresponding item composition
-	 * @see ItemID
+	 * @see net.runelite.api.gameval.ItemID
 	 */
 	@Nonnull
 	ItemComposition getItemDefinition(int id);
@@ -849,7 +849,7 @@ public interface Client extends OAuthApi, GameEngine
 	 * @param varps passed varbits
 	 * @param varbitId the variable ID
 	 * @return the value
-	 * @see Varbits
+	 * @see net.runelite.api.gameval.VarbitID
 	 */
 	@VisibleForDevtools
 	int getVarbitValue(int[] varps, @Varbit int varbitId);
@@ -860,7 +860,7 @@ public interface Client extends OAuthApi, GameEngine
 	 * @param varps passed varbits
 	 * @param varbit the variable
 	 * @param value the value
-	 * @see Varbits
+	 * @see net.runelite.api.gameval.VarbitID
 	 */
 	@VisibleForDevtools
 	void setVarbitValue(int[] varps, @Varbit int varbit, int value);
@@ -963,7 +963,7 @@ public interface Client extends OAuthApi, GameEngine
 	 *
 	 * @param objectId the object ID
 	 * @return the corresponding object composition
-	 * @see ObjectID
+	 * @see net.runelite.api.gameval.ObjectID
 	 */
 	ObjectComposition getObjectDefinition(int objectId);
 
@@ -972,7 +972,7 @@ public interface Client extends OAuthApi, GameEngine
 	 *
 	 * @param npcId the npc ID
 	 * @return the corresponding NPC composition
-	 * @see NpcID
+	 * @see net.runelite.api.gameval.NpcID
 	 */
 	NPCComposition getNpcDefinition(int npcId);
 
@@ -1141,7 +1141,7 @@ public interface Client extends OAuthApi, GameEngine
 	 * Loads an animation from the cache
 	 *
 	 * @param id the ID of the animation. Any int is allowed, but implementations in the client
-	 * should be defined in {@link AnimationID}
+	 * should be defined in {@link net.runelite.api.gameval.AnimationID}
 	 */
 	Animation loadAnimation(int id);
 
@@ -1249,7 +1249,7 @@ public interface Client extends OAuthApi, GameEngine
 	 *
 	 * @param inventory the inventory type
 	 * @return the item container
-	 * @see InventoryID
+	 * @see net.runelite.api.gameval.InventoryID
 	 */
 	@Nullable
 	ItemContainer getItemContainer(InventoryID inventory);
@@ -1259,7 +1259,7 @@ public interface Client extends OAuthApi, GameEngine
 	 *
 	 * @param id the inventory id
 	 * @return the item container
-	 * @see InventoryID
+	 * @see net.runelite.api.gameval.InventoryID
 	 */
 	@Nullable
 	ItemContainer getItemContainer(int id);
@@ -1698,6 +1698,12 @@ public interface Client extends OAuthApi, GameEngine
 	 */
 	@Deprecated
 	void setInventoryDragDelay(int delay);
+
+	/**
+	 * Get the hostname of the current world
+	 * @return
+	 */
+	String getWorldHost();
 
 	/**
 	 * Gets a set of current world types that apply to the logged in world.
