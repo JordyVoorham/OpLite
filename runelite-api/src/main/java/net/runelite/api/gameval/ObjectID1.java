@@ -65070,5 +65070,425 @@ class ObjectID1
 	 * Ladder
 	 */
 	public static final int GRANDTREE_LADDERMIDDLE_BOTTOM = 56233;
+
+	/**
+	 * Broken gibbet
+	 */
+	public static final int COF_SHORTCUT_BOTTOM = 56234;
+
+	/**
+	 * Curiously positioned crate of carrots
+	 */
+	public static final int EASTER25_CARROT_CRATE_TRAIL_1 = 56235;
+
+	/**
+	 * Curiously positioned crate of carrots
+	 */
+	public static final int EASTER25_CARROT_CRATE_INVESTIGATED_1 = 56236;
+
+	/**
+	 * Curiously positioned crate of carrots
+	 */
+	public static final int EASTER25_CARROT_CRATE_NOOP_1 = 56237;
+	public static final int COF_SHORTCUT_MIDDLE = 56238;
+
+	/**
+	 * Conspicuous carrot scraps
+	 */
+	public static final int EASTER25_CARROT_SCRAPS_TRAIL_2 = 56239;
+
+	/**
+	 * Carrot scraps
+	 */
+	public static final int EASTER25_CARROT_SCRAPS_TRAIL_INVESTIGATED_2 = 56240;
+
+	/**
+	 * Carrot scraps
+	 */
+	public static final int EASTER25_CARROT_SCRAPS_TRAIL_NOOP_2 = 56241;
+
+	/**
+	 * Chain
+	 */
+	public static final int COF_SHORTCUT_TOP = 56242;
+
+	/**
+	 * Suspicious carrot scraps
+	 */
+	public static final int EASTER25_CARROT_SCRAPS_TRAIL_3 = 56243;
+
+	/**
+	 * Carrot scraps
+	 */
+	public static final int EASTER25_CARROT_SCRAPS_TRAIL_INVESTIGATED_3 = 56244;
+
+	/**
+	 * Carrot scraps
+	 */
+	public static final int EASTER25_CARROT_SCRAPS_TRAIL_NOOP_3 = 56245;
+
+	/**
+	 * Stone
+	 */
+	public static final int YAMA_STEPPINGSTONE = 56246;
+
+	/**
+	 * Portal
+	 */
+	public static final int YAMA_PORTAL = 56247;
+
+	/**
+	 * Stone pedestal
+	 */
+	public static final int YAMA_PEDESTAL = 56248;
+
+	/**
+	 * Glowing portal
+	 */
+	public static final int YAMA_EXIT = 56249;
+
+	/**
+	 * Bush
+	 */
+	public static final int EASTER25_RABBITHOLE_BUSH = 56250;
+
+	/**
+	 * Bush
+	 */
+	public static final int EASTER25_RABBITHOLE_ENTRANCE_BUSH = 56251;
+
+	/**
+	 * Hole
+	 */
+	public static final int EASTER25_RABBITHOLE_ENTRANCE_HOLE = 56252;
+
+	/**
+	 * Ladder
+	 */
+	public static final int EASTER25_RABBITHOLE_EXIT_LADDER = 56253;
+	public static final int EASTER25_PLANKS01 = 56254;
+	public static final int EASTER25_PLANKS02 = 56255;
+	public static final int EASTER25_PLANKS03 = 56256;
+	public static final int EASTER25_PLANKS01_LAYED01 = 56257;
+	public static final int EASTER25_PLANKS01_LAYED02 = 56258;
+	public static final int EASTER25_CARROT01_PILE01 = 56259;
+	public static final int EASTER25_CARROT01_PILE02 = 56260;
+	public static final int EASTER25_CARROT01_PILE03 = 56261;
+	public static final int EASTER25_CARROT01_PILE04 = 56262;
+
+	/**
+	 * Crate
+	 */
+	public static final int EASTER25_CRATE01_CARROT01 = 56263;
+
+	/**
+	 * Flames
+	 */
+	public static final int YAMA_FIREWALL = 56264;
+
+	/**
+	 * Yama's throne
+	 */
+	public static final int THRONE_DEMONIC01_STONE01 = 56265;
+
+	/**
+	 * Pile of skulls
+	 */
+	public static final int ROCK_SKULLS01_LARGE01 = 56266;
+
+	/**
+	 * Market stall
+	 */
+	public static final int EASTER25_STALL01_DEFAULT01 = 56267;
+
+	/**
+	 * Market stall
+	 */
+	public static final int EASTER25_STALL01_BROKEN01 = 56268;
+
+	/**
+	 * Market stall
+	 */
+	public static final int EASTER25_STALL01_INCOMPLETE01 = 56269;
+
+	/**
+	 * Market stall
+	 */
+	public static final int EASTER25_STALL01_COMPLETE01 = 56270;
+
+	/**
+	 * Market stall
+	 */
+	public static final int EASTER25_STALL01_COMPLETE02 = 56271;
+
+	/**
+	 * Market stall
+	 */
+	public static final int EASTER25_STALL01_COMPLETE03 = 56272;
+
+	/**
+	 * Pile of skulls
+	 */
+	public static final int ROCK_SKULLS01_LARGE02 = 56273;
+	public static final int ROCK_LAVA02_LARGE01 = 56274;
+	public static final int ROCK_LAVA02_LARGE02 = 56275;
+	public static final int ROCK_LAVA02_LARGE03 = 56276;
+
+	/**
+	 * Crate
+	 */
+	public static final int EASTER25_CRATE01 = 56277;
+	public static final int EASTER25_BUNTING01_MIDDLE01 = 56278;
+	public static final int EASTER25_BUNTING01_MIDDLE02 = 56279;
+	public static final int EASTER25_BUNTING01_POST01 = 56280;
+	public static final int EASTER25_BUNTING01_POST02 = 56281;
+
+	/**
+	 * Juice press
+	 */
+	public static final int EASTER25_JUICE_PRESS = 56282;
+	public static final int EASTER25_JUICE_SPLAT_1 = 56283;
+	public static final int EASTER25_JUICE_SPLAT_2 = 56284;
+	public static final int WALLKIT_EASTER25_CAVE01 = 56285;
+	public static final int EASTER25_PLANT01_CRYPT01 = 56286;
+	public static final int EASTER25_PLANT01_CRYPT02 = 56287;
+	public static final int EASTER25_PLANT01_CRYPT03 = 56288;
+	public static final int EASTER25_TORCH01_CRYPT01 = 56289;
+
+	/**
+	 * Fungus
+	 */
+	public static final int EASTER25_MUSHROOM01_CRYPT01 = 56290;
+
+	/**
+	 * Fungi
+	 */
+	public static final int EASTER25_MUSHROOM01_CRYPT02 = 56291;
+	public static final int EASTER25_MUSHROOM01_CRYPT03 = 56292;
+	public static final int EASTER25_SKEWSTEPS01_BRICK02 = 56293;
+	public static final int EASTER25_RAISIN_ROCK_FLAT = 56294;
+
+	/**
+	 * Sack of grapes
+	 */
+	public static final int EASTER25_GRAPE_SACK = 56295;
+
+	/**
+	 * Sack of raisins
+	 */
+	public static final int EASTER25_RAISIN_SACK = 56296;
+	public static final int ROCK_LAVA02_MEDIUM01 = 56297;
+
+	/**
+	 * Old bookcase
+	 */
+	public static final int EASTER25_PERFORMANCE_BOOKCASE = 56298;
+
+	/**
+	 * Wardrobe
+	 */
+	public static final int EASTER25_PERFORMANCE_WARDROBE = 56299;
+	public static final int EASTER25_PILLAR01_CURTAIN01 = 56300;
+	public static final int EASTER25_PILLAR01_CURTAIN01_M = 56301;
+	public static final int EASTER25_PILLAR01_POLE01 = 56302;
+	public static final int EASTER25_STEPS_BASIC01 = 56303;
+	public static final int EASTER25_SCAFFOLD_RAIL = 56304;
+	public static final int EASTER25_THEATRE_CURTAINS_RIGHT = 56305;
+	public static final int EASTER25_THEATRE_CURTAINS_LEFT = 56306;
+	public static final int EASTER25_THEATRE_CURTAINS_SIDE = 56307;
+	public static final int EASTER25_THEATRE_CURTAINS_CORNER_LEFT = 56308;
+	public static final int EASTER25_THEATRE_CURTAINS_CORNER_RIGHT = 56309;
+
+	/**
+	 * Carrot Pin
+	 */
+	public static final int EASTER25_CARROT_BOWLINGPIN01 = 56310;
+	public static final int ROCK_LAVA02_MEDIUM02 = 56311;
+	public static final int ROCK_LAVA02_MEDIUM03 = 56312;
+	public static final int ROCK_LAVA02_SMALL01 = 56313;
+	public static final int ROCK_LAVA02_SMALL02 = 56314;
+	public static final int TORCH_DEMONIC01_DEFAULT01 = 56315;
+	public static final int FX_SMOKE_YAMA01 = 56316;
+	public static final int FX_SMOKE_YAMA02 = 56317;
+	public static final int FX_SMOKE_YAMA03 = 56318;
+
+	/**
+	 * Pillar
+	 */
+	public static final int PILLAR_DEMONIC01_SPIKE = 56319;
+
+	/**
+	 * Pillar
+	 */
+	public static final int PILLAR_DEMONIC01_SPIKE01 = 56320;
+
+	/**
+	 * Pillar
+	 */
+	public static final int PILLAR_DEMONIC01_SPIKE02 = 56321;
+
+	/**
+	 * Pillar
+	 */
+	public static final int PILLAR_DEMONIC01_SPIKE03 = 56322;
+
+	/**
+	 * Pillar
+	 */
+	public static final int PILLAR_DEMONIC01_SPIKE04 = 56323;
+
+	/**
+	 * Skulls
+	 */
+	public static final int SKULLS_HUMAN01_PILE01 = 56324;
+	public static final int SKULLS_HUMAN01_SINGLE01 = 56325;
+
+	/**
+	 * Fire
+	 */
+	public static final int FX_FIRE_TALL01 = 56326;
+
+	/**
+	 * Fire
+	 */
+	public static final int FX_FIRE_TALL02 = 56327;
+
+	/**
+	 * Fire
+	 */
+	public static final int FX_FIRE_TALL03 = 56328;
+	public static final int YAMA_DUGUPSOIL1 = 56329;
+	public static final int YAMA_DUGUPSOIL2 = 56330;
+	public static final int YAMA_DUGUPSOIL3 = 56331;
+	public static final int YAMA_DUGUPSOIL4 = 56332;
+	public static final int YAMA_DUGUPSOIL5 = 56333;
+	public static final int YAMA_DUGUPSOIL6 = 56334;
+
+	/**
+	 * Glyph
+	 */
+	public static final int FLOORKIT_SUMMONING03_FULL01 = 56335;
+
+	/**
+	 * Glyph
+	 */
+	public static final int FLOORKIT_SUMMONING03_FULL02 = 56336;
+
+	/**
+	 * Glyph
+	 */
+	public static final int FLOORKIT_SUMMONING03_INACTIVE = 56337;
+
+	/**
+	 * Glyph
+	 */
+	public static final int FLOORKIT_SUMMONING03_FULL01_DEACTIVATE = 56338;
+
+	/**
+	 * Glyph
+	 */
+	public static final int FLOORKIT_SUMMONING03_FULL02_DEACTIVATE = 56339;
+	public static final int FLOORKIT_SUMMONING03_NORTHEAST01 = 56340;
+	public static final int FLOORKIT_SUMMONING03_NORTHWEST01 = 56341;
+	public static final int FLOORKIT_SUMMONING03_SOUTHEAST01 = 56342;
+	public static final int FLOORKIT_SUMMONING03_SOUTHWEST01 = 56343;
+	public static final int FLOORKIT_SUMMONING03_NORTHEAST02 = 56344;
+	public static final int FLOORKIT_SUMMONING03_NORTHWEST02 = 56345;
+	public static final int FLOORKIT_SUMMONING03_SOUTHEAST02 = 56346;
+	public static final int FLOORKIT_SUMMONING03_SOUTHWEST02 = 56347;
+	public static final int FLOORKIT_GRADIENT02_STRAIGHT01_BRIGHTRED = 56348;
+	public static final int FLOORKIT_GRADIENT02_CORNER01_BRIGHTRED = 56349;
+	public static final int FLOORKIT_GRADIENT02_DIAGONAL01_BRIGHTRED = 56350;
+	public static final int FLOORKIT_GRADIENT02_DIAGONAL02_BRIGHTRED = 56351;
+	public static final int FLOORKIT_GRADIENT02_DIAGONAL03_BRIGHTRED = 56352;
+	public static final int FLOORKIT_GRADIENT02_TRIANGLE01_BRIGHTRED = 56353;
+	public static final int FLOORKIT_GRADIENT02_TRIANGLE02_BRIGHTRED = 56354;
+	public static final int FLOORKIT_GRADIENT02_HALF01_BRIGHTRED = 56355;
+	public static final int FLOORKIT_GRADIENT02_RSHAPE01_BRIGHTRED = 56356;
+	public static final int FLOORKIT_GRADIENT02_TSHAPE01_BRIGHTRED = 56357;
+
+	/**
+	 * Shadow pool
+	 */
+	public static final int YAMA_SHADOW_POOL = 56358;
+
+	/**
+	 * Infernal shale rocks
+	 */
+	public static final int CRIMSON_LOVAKITE1 = 56359;
+
+	/**
+	 * Infernal shale rocks
+	 */
+	public static final int CRIMSON_LOVAKITE2 = 56360;
+	public static final int CRIMSON_LOVAKITE_STALAGMITE = 56361;
+
+	/**
+	 * Infernal shale deposit
+	 */
+	public static final int CRIMSON_LOVAKITE_LARGE_ACTIVE = 56362;
+
+	/**
+	 * Infernal shale deposit (Depleted)
+	 */
+	public static final int CRIMSON_LOVAKITE_LARGE_INACTIVE = 56363;
+	public static final int COF_DUGUPSOIL01 = 56364;
+	public static final int COF_DUGUPSOIL02 = 56365;
+
+	/**
+	 * Furnace
+	 */
+	public static final int COF_FURNACE = 56366;
+
+	/**
+	 * Pool of ichor
+	 */
+	public static final int POOL_OF_ICHOR = 56367;
+
+	/**
+	 * Anvil
+	 */
+	public static final int CHASM_ANVIL = 56368;
+	public static final int COF_FIREWALL = 56369;
+
+	/**
+	 * Fire
+	 */
+	public static final int COF_FIREWALL_ACTIVE = 56370;
+
+	/**
+	 * Platform edge
+	 */
+	public static final int COF_AGILITY_LIP = 56371;
+
+	/**
+	 * Gap
+	 */
+	public static final int COF_AGILITY_JUMP = 56372;
+
+	/**
+	 * Mysterious Portal
+	 */
+	public static final int DEADMAN_ALLSTARS_PORTAL = 56373;
+
+	/**
+	 * Mysterious Portal
+	 */
+	public static final int DEADMAN_ALLSTARS_PORTAL_EXIT = 56374;
+
+	/**
+	 * Barrier
+	 */
+	public static final int DEADMAN_ALLSTARS_FINALE_BARRIER = 56375;
+
+	/**
+	 * Door
+	 */
+	public static final int POORDOOR_M = 56376;
+
+	/**
+	 * Door
+	 */
+	public static final int POORDOOROPEN_M = 56377;
 /* This file is automatically generated. Do not edit. */
 }

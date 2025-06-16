@@ -95,7 +95,7 @@ public class ScreenshotPlugin extends Plugin
 	private static final Pattern NUMBER_PATTERN = Pattern.compile("([,0-9]+)");
 	private static final Pattern LEVEL_UP_PATTERN = Pattern.compile(".*Your ([a-zA-Z]+) (?:level is|are)? now (\\d+)\\.");
 	private static final Pattern LEVEL_UP_MESSAGE_PATTERN = Pattern.compile("Congratulations, you've (just advanced your (?<skill>[a-zA-Z]+) level\\. You are now level (?<level>\\d+)|reached the highest possible (?<skill99>[a-zA-Z]+) level of 99)\\.");
-	private static final Pattern BOSSKILL_MESSAGE_PATTERN = Pattern.compile("Your (.+) kill count is: ?<col=[0-9a-f]{6}>([0-9,]+)</col>");
+	private static final Pattern BOSSKILL_MESSAGE_PATTERN = Pattern.compile("Your (.+) (?:kill|success) count is: ?<col=[0-9a-f]{6}>([0-9,]+)</col>");
 	private static final Pattern VALUABLE_DROP_PATTERN = Pattern.compile(".*Valuable drop: ([^<>]+?\\(((?:\\d+,?)+) coins\\))(?:</col>)?");
 	private static final Pattern UNTRADEABLE_DROP_PATTERN = Pattern.compile(".*Untradeable drop: ([^<>]+)(?:</col>)?");
 	private static final Pattern DUEL_END_PATTERN = Pattern.compile("You have now (won|lost) ([0-9,]+) duels?\\.");
@@ -143,7 +143,8 @@ public class ScreenshotPlugin extends Plugin
 		TOB_HM,
 		TOA_ENTRY_MODE,
 		TOA,
-		TOA_EXPERT_MODE
+		TOA_EXPERT_MODE,
+		FORTIS_COLOSSEUM
 	}
 
 	private KillType killType;
@@ -332,9 +333,9 @@ public class ScreenshotPlugin extends Plugin
 			return;
 		}
 
-		final String[] stringStack = client.getStringStack();
-		final int stringSize = client.getStringStackSize();
-		kickPlayerName = stringStack[stringSize - 1];
+		final Object[] objectStack = client.getObjectStack();
+		final int objectStackSize = client.getObjectStackSize();
+		kickPlayerName = (String) objectStack[objectStackSize - 1];
 	}
 
 	@Subscribe
@@ -427,6 +428,12 @@ public class ScreenshotPlugin extends Plugin
 				killCountNumber = Integer.valueOf(m.group().replace(",", ""));
 				return;
 			}
+		}
+
+		if (chatMessage.contains("Search the chest nearby to retrieve your earned rewards!"))
+		{
+			killType = KillType.FORTIS_COLOSSEUM;
+			return;
 		}
 
 		if (chatMessage.equals("Your request to kick/ban this user was successful.") && config.screenshotKick())
@@ -551,6 +558,8 @@ public class ScreenshotPlugin extends Plugin
 			case InterfaceID.TOA_CHESTS:
 			case InterfaceID.BARROWS_REWARD:
 			case InterfaceID.PMOON_REWARD:
+			case InterfaceID.COLOSSEUM_REWARD_CHEST_2:
+
 				if (!config.screenshotRewards())
 				{
 					return;
@@ -715,6 +724,18 @@ public class ScreenshotPlugin extends Plugin
 			{
 				fileName = "Loot key";
 				screenshotSubDir = SD_WILDERNESS_LOOT_CHEST;
+				break;
+			}
+			case InterfaceID.COLOSSEUM_REWARD_CHEST_2:
+			{
+				if (killType != KillType.FORTIS_COLOSSEUM)
+				{
+					return;
+				}
+
+				fileName = "Fortis Colosseum Chest";
+				screenshotSubDir = SD_CHEST_LOOT;
+				killType = null;
 				break;
 			}
 			default:

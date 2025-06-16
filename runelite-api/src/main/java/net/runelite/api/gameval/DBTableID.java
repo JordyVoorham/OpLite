@@ -415,6 +415,7 @@ public final class DBTableID
 			public static final int HALLOWEEN_2024 = 3935;
 			public static final int XMAS_2024 = 4228;
 			public static final int BIRTHDAY_2025 = 4318;
+			public static final int EASTER_2025 = 5107;
 		}
 	}
 
@@ -5524,6 +5525,7 @@ public final class DBTableID
 			public static final int MUSIC_THE_HEIST = 3971;
 			public static final int MUSIC_HEAVY_SECURITY = 3972;
 			public static final int MUSIC_THE_PLUNDERED_TOMB = 3973;
+			public static final int MUSIC_YAMA_COMBAT = 5154;
 		}
 	}
 
@@ -6597,6 +6599,7 @@ public final class DBTableID
 			public static final int HISCORES_BOSSES_AMOXLIATL = 4068;
 			public static final int HISCORES_BOSSES_THE_HUEYCOATL = 4069;
 			public static final int HISCORES_BOSSES_THE_ROYAL_TITANS = 4234;
+			public static final int HISCORES_BOSSES_YAMA = 5130;
 		}
 	}
 
@@ -7885,6 +7888,104 @@ public final class DBTableID
 			public static final int FAIRYRINGS_BJS = 5060;
 			public static final int FAIRYRINGS_BJR = 5061;
 			public static final int FAIRYRINGS_BJQ = 5062;
+		}
+	}
+
+	public static final class Didyouknow
+	{
+		public static final int ID = 90;
+
+		public static final class Row
+		{
+			public static final int DIDYOUKNOW_BANKHELP = 5108;
+			public static final int DIDYOUKNOW_CERTPRODUCE = 5109;
+			public static final int DIDYOUKNOW_FAIRYRING_DESKTOP = 5110;
+			public static final int DIDYOUKNOW_FAIRYRING_MOBILE = 5111;
+			public static final int DIDYOUKNOW_PHIALS_F2P = 5112;
+			public static final int DIDYOUKNOW_PHIALS = 5113;
+			public static final int DIDYOUKNOW_ROOFS = 5114;
+			public static final int DIDYOUKNOW_LOCKSLOT = 5115;
+			public static final int DIDYOUKNOW_TICKEAT = 5116;
+			public static final int DIDYOUKNOW_VIYELDI_CAVE_BARRELS = 5117;
+			public static final int DIDYOUKNOW_VIRTUAL_LEVELLING = 5118;
+			public static final int DIDYOUKNOW_PIZZAHALVES = 5119;
+			public static final int DIDYOUKNOW_KEBABCOMPOST = 5120;
+			public static final int DIDYOUKNOW_POISONCURE1_DESKTOP = 5121;
+			public static final int DIDYOUKNOW_POISONCURE1_MOBILE = 5122;
+			public static final int DIDYOUKNOW_POISONCURE2_DESKTOP = 5123;
+			public static final int DIDYOUKNOW_POISONCURE2_MOBILE = 5124;
+			public static final int DIDYOUKNOW_COMBINE_JEWELLERY = 5125;
+			public static final int DIDYOUKNOW_COMBINE_POTIONS = 5126;
+			public static final int DIDYOUKNOW_HUMIDIFY = 5127;
+			public static final int DIDYOUKNOW_TEMPOROSS_LEAVE_DESKTOP = 5128;
+			public static final int DIDYOUKNOW_TEMPOROSS_LEAVE_MOBILE = 5129;
+			public static final int DIDYOUKNOW_GLORY_GEMS = 5131;
+			public static final int DIDYOUKNOW_SNOWFLAKE_BASALT = 5132;
+			public static final int DIDYOUKNOW_FARMINGGEAR = 5133;
+			public static final int DIDYOUKNOW_MINIMAP_HIDE = 5134;
+			public static final int DIDYOUKNOW_UNKAHFIRE = 5135;
+			public static final int DIDYOUKNOW_DORGESH_KALPHITE = 5136;
+			public static final int DIDYOUKNOW_SNELMS = 5137;
+			public static final int DIDYOUKNOW_STRANGE_FRUIT = 5138;
+			public static final int DIDYOUKNOW_TWINFLAME_STAFF = 5139;
+			public static final int DIDYOUKNOW_BOXTRAP = 5140;
+			public static final int DIDYOUKNOW_HUNTER_FAIL = 5141;
+			public static final int DIDYOUKNOW_BOLT_POUCH = 5142;
+			public static final int DIDYOUKNOW_SUPERCOMPOST = 5143;
+			public static final int DIDYOUKNOW_RUNSETTING = 5144;
+			public static final int DIDYOUKNOW_HOUSE_VIEWER = 5145;
+			public static final int DIDYOUKNOW_HITSPLAT_THRESHOLD = 5146;
+			public static final int DIDYOUKNOW_II_STRENGTH_XP = 5147;
+			public static final int DIDYOUKNOW_SMASH_VIALS = 5148;
+			public static final int DIDYOUKNOW_SMASH_POTS = 5149;
+			public static final int DIDYOUKNOW_ZAMMY_GRAPES = 5150;
+			public static final int DIDYOUKNOW_MAKEOVER = 5151;
+			public static final int DIDYOUKNOW_PEEK_DESKTOP = 5152;
+			public static final int DIDYOUKNOW_PEEK_MOBILE = 5153;
+		}
+	}
+
+	public static final class Multirunes
+	{
+		public static final int ID = 91;
+
+		/**
+		 * obj
+		 */
+		public static final int COL_BASE_RUNE = 0;
+
+		/**
+		 * (namedobj, obj)
+		 */
+		public static final int COL_COMBO_AND_ALTERNATIVE_RUNES = 1;
+
+		public static final class Row
+		{
+			public static final int COSMIC_RUNE_ALTERNATIVES = 5155;
+			public static final int SOUL_RUNE_ALTERNATIVES = 5156;
+		}
+	}
+
+	public static final class ComboruneRecipe
+	{
+		public static final int ID = 92;
+
+		public static final class Row
+		{
+			public static final int LAVA_FROM_EARTHALTAR = 5157;
+			public static final int LAVA_FROM_FIREALTAR = 5158;
+			public static final int SMOKE_FROM_FIREALTAR = 5159;
+			public static final int SMOKE_FROM_AIRALTAR = 5160;
+			public static final int STEAM_FROM_FIREALTAR = 5161;
+			public static final int STEAM_FROM_WATERALTAR = 5162;
+			public static final int DUST_FROM_AIRALTAR = 5163;
+			public static final int DUST_FROM_EARTHALTAR = 5164;
+			public static final int MUD_FROM_EARTHALTAR = 5165;
+			public static final int MUD_FROM_WATERALTAR = 5166;
+			public static final int MIST_FROM_WATERALTAR = 5167;
+			public static final int MIST_FROM_AIRALTAR = 5168;
+			public static final int SUNFIRE_FROM_RALOSSHRINE = 5169;
+			public static final int COSMICSOUL_FROM_COSMICALTAR = 5170;
 		}
 	}
 /* This file is automatically generated. Do not edit. */
