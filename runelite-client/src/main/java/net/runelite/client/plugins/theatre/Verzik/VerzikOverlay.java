@@ -359,6 +359,6 @@ public class VerzikOverlay extends RoomOverlay
 		int x = (int) p.getX();
 		int y = (int) p.getY();
 		int z = (int) p.getZ();
-		return Perspective.localToCanvas(client, new LocalPoint(x, y), 0, Perspective.getTileHeight(client, new LocalPoint(x, y), p.getFloor()) - z);
+		return Perspective.localToCanvas(client, new LocalPoint(x, y), 0, Perspective.getTileHeight(client, new LocalPoint(x, y), 0) - z);
 	}
 }

@@ -413,7 +413,7 @@ public class WardenP2 implements PluginLifecycleComponent
 
 	private int getProjectileCycles(final Projectile projectile)
 	{
-		final WorldPoint projPoint = WorldPoint.fromLocal(client, projectile.getX1(), projectile.getY1(), projectile.getFloor());
+		final WorldPoint projPoint = WorldPoint.fromLocal(client, projectile.getX1(), projectile.getY1(), 0);
 		final WorldPoint playerPoint = client.getLocalPlayer().getWorldLocation();
 		final int distance = projPoint.distanceTo2D(playerPoint);
 		return projectile.getRemainingCycles() + (distance * 3);
