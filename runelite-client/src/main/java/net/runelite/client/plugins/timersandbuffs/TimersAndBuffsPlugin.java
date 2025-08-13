@@ -44,6 +44,7 @@ import net.runelite.api.Actor;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
 import net.runelite.api.EquipmentInventorySlot;
+import net.runelite.api.GameState;
 import net.runelite.api.Item;
 import net.runelite.api.ItemContainer;
 import net.runelite.api.NPC;
@@ -172,7 +173,7 @@ public class TimersAndBuffsPlugin extends Plugin
 	@Override
 	public void startUp()
 	{
-		if (config.showHomeMinigameTeleports())
+		if (config.showHomeMinigameTeleports() && client.getGameState() == GameState.LOGGED_IN)
 		{
 			checkTeleport(VarPlayerID.AIDE_TELE_TIMER);
 			checkTeleport(VarPlayerID.SLUG2_REGIONUID);
@@ -686,7 +687,7 @@ public class TimersAndBuffsPlugin extends Plugin
 			removeGameTimer(HOME_TELEPORT);
 			removeGameTimer(MINIGAME_TELEPORT);
 		}
-		else
+		else if (client.getGameState() == GameState.LOGGED_IN)
 		{
 			checkTeleport(VarPlayerID.AIDE_TELE_TIMER);
 			checkTeleport(VarPlayerID.SLUG2_REGIONUID);
@@ -1027,13 +1028,9 @@ public class TimersAndBuffsPlugin extends Plugin
 				// by default the thrall lasts 1 tick per magic level
 				int t = client.getBoostedSkillLevel(Skill.MAGIC);
 				// ca tiers being completed boosts this
-				if (client.getVarbitValue(VarbitID.CA_TIER_STATUS_GRANDMASTER) == 2)
+				if (client.getVarbitValue(VarbitID.CA_TIER_STATUS_MASTER) == 2)
 				{
 					t += t; // 100% boost
-				}
-				else if (client.getVarbitValue(VarbitID.CA_TIER_STATUS_MASTER) == 2)
-				{
-					t += t / 2; // 50% boost
 				}
 				createGameTimer(RESURRECT_THRALL, Duration.of(t, RSTimeUnit.GAME_TICKS));
 			}

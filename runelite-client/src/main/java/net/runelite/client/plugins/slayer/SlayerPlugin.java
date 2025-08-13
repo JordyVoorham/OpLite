@@ -91,6 +91,7 @@ import net.runelite.client.ui.overlay.infobox.InfoBoxManager;
 import net.runelite.client.util.ColorUtil;
 import net.runelite.client.util.Text;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 
 @PluginDescriptor(
 	name = "Slayer",
@@ -107,6 +108,9 @@ public class SlayerPlugin extends Plugin
 	private static final String TASK_COMMAND_STRING = "!task";
 	private static final Pattern TASK_STRING_VALIDATION = Pattern.compile("[^a-zA-Z0-9' -]");
 	private static final int TASK_STRING_MAX_LENGTH = 50;
+
+	// Task streak
+	private static final int KRYSTILIA_SLAYER_MASTER = 7;
 
 	@Inject
 	private Client client;
@@ -258,15 +262,10 @@ public class SlayerPlugin extends Plugin
 	{
 		switch (event.getGameState())
 		{
-			// client (or with CONNECTION_LOST, the server...) will soon zero the slayer varps.
-			// zero task/amount so that this doesn't cause the plugin to reset the task, which
-			// would forget the initial amount. The vars are then resynced shortly after
 			case HOPPING:
 			case LOGGING_IN:
 			case CONNECTION_LOST:
-				taskName = "";
-				amount = 0;
-				loginFlag = true; // to reinitialize initialAmount and avoid re-adding the infobox
+				loginFlag = true; // to avoid re-adding the infobox
 				targets.clear();
 				break;
 		}
@@ -281,13 +280,6 @@ public class SlayerPlugin extends Plugin
 			setTask(task, 42, 42);
 			log.debug("Set task to {}", task);
 		}
-	}
-
-	@VisibleForTesting
-	int getIntProfileConfig(String key)
-	{
-		Integer value = configManager.getRSProfileConfiguration(SlayerConfig.GROUP_NAME, key, int.class);
-		return value == null ? -1 : value;
 	}
 
 	private void setProfileConfig(String key, Object value)
@@ -335,7 +327,8 @@ public class SlayerPlugin extends Plugin
 		if (varpId == VarPlayerID.SLAYER_COUNT
 			|| varpId == VarPlayerID.SLAYER_AREA
 			|| varpId == VarPlayerID.SLAYER_TARGET
-			|| varbitId == VarbitID.SLAYER_TARGET_BOSSID)
+			|| varbitId == VarbitID.SLAYER_TARGET_BOSSID
+			|| varpId == VarPlayerID.SLAYER_COUNT_ORIGINAL)
 		{
 			clientThread.invokeLater(this::updateTask);
 		}
@@ -350,7 +343,7 @@ public class SlayerPlugin extends Plugin
 				addCounter();
 			}
 		}
-		else if (varbitId == VarbitID.SLAYER_TASKS_COMPLETED)
+		else if (varbitId == VarbitID.SLAYER_TASKS_COMPLETED || varbitId == VarbitID.SLAYER_WILDERNESS_TASKS_COMPLETED)
 		{
 			setProfileConfig(SlayerConfig.STREAK_KEY, varbitChanged.getValue());
 
@@ -387,16 +380,15 @@ public class SlayerPlugin extends Plugin
 			String taskLocation = null;
 			if (areaId > 0)
 			{
-				taskLocation = client.getEnum(EnumID.SLAYER_TASK_LOCATION)
-					.getStringValue(areaId);
+				taskLocation = StringUtils.capitalize(client.getEnum(EnumID.SLAYER_TASK_LOCATION)
+					.getStringValue(areaId));
 			}
+
+			int initialAmount = client.getVarpValue(VarPlayerID.SLAYER_COUNT_ORIGINAL);
 
 			if (loginFlag)
 			{
 				log.debug("Sync slayer task: {}x {} at {}", amount, taskName, taskLocation);
-
-				// initial amount is not in a var, so we initialize it from the stored amount
-				initialAmount = getIntProfileConfig(SlayerConfig.INIT_AMOUNT_KEY);
 				setTask(taskName, amount, initialAmount, taskLocation, false);
 
 				// initialize streak and points in the event the plugin was toggled on after login
@@ -406,7 +398,7 @@ public class SlayerPlugin extends Plugin
 			else if (!Objects.equals(taskName, this.taskName) || !Objects.equals(taskLocation, this.taskLocation))
 			{
 				log.debug("Task change: {}x {} at {}", amount, taskName, taskLocation);
-				setTask(taskName, amount, amount, taskLocation, true);
+				setTask(taskName, amount, initialAmount, taskLocation, true);
 			}
 			else if (amount != this.amount)
 			{
@@ -657,8 +649,11 @@ public class SlayerPlugin extends Plugin
 				+ " " + initialAmount;
 		}
 
+		final int streak = client.getVarbitValue(VarbitID.SLAYER_MASTER) == KRYSTILIA_SLAYER_MASTER
+			? client.getVarbitValue(VarbitID.SLAYER_WILDERNESS_TASKS_COMPLETED)
+			: client.getVarbitValue(VarbitID.SLAYER_TASKS_COMPLETED);
 		counter = new TaskCounter(taskImg, this, amount);
-		counter.setTooltip(String.format(taskTooltip, capsString(taskName), getIntProfileConfig(SlayerConfig.POINTS_KEY), getIntProfileConfig(SlayerConfig.STREAK_KEY)));
+		counter.setTooltip(String.format(taskTooltip, capsString(taskName), client.getVarbitValue(VarbitID.SLAYER_POINTS),  streak));
 
 		infoBoxManager.addInfoBox(counter);
 	}
