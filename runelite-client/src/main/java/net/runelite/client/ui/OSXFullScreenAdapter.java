@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020, Alexsuperfly <alexsuperfly@users.noreply.github.com>
+ * Copyright (c) 2023 Abex
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,45 +22,37 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.plugins.xpupdater;
+package net.runelite.client.ui;
 
-import net.runelite.client.config.Config;
-import net.runelite.client.config.ConfigGroup;
-import net.runelite.client.config.ConfigItem;
+import com.apple.eawt.FullScreenAdapter;
+import com.apple.eawt.FullScreenUtilities;
+import com.apple.eawt.event.FullScreenEvent;
+import java.awt.Frame;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
-@ConfigGroup("xpupdater")
-public interface XpUpdaterConfig extends Config
+@Slf4j
+@RequiredArgsConstructor
+class OSXFullScreenAdapter extends FullScreenAdapter
 {
-	@ConfigItem(
-		position = 1,
-		keyName = "cml",
-		name = "Crystal Math Labs",
-		description = "Automatically updates your stats on crystalmathlabs.com when you log out."
-	)
-	default boolean cml()
+	private final Frame frame;
+
+	@Override
+	public void windowEnteredFullScreen(FullScreenEvent e)
 	{
-		return false;
+		log.debug("Window entered fullscreen mode--setting extended state to {}", Frame.MAXIMIZED_BOTH);
+		frame.setExtendedState(Frame.MAXIMIZED_BOTH);
 	}
 
-	@ConfigItem(
-		position = 3,
-		keyName = "templeosrs",
-		name = "TempleOSRS",
-		description = "Automatically updates your stats on templeosrs.com when you log out."
-	)
-	default boolean templeosrs()
+	@Override
+	public void windowExitedFullScreen(FullScreenEvent e)
 	{
-		return false;
+		log.debug("Window exited fullscreen mode--setting extended state to {}", Frame.NORMAL);
+		frame.setExtendedState(Frame.NORMAL);
 	}
 
-	@ConfigItem(
-		position = 4,
-		keyName = "wiseoldman",
-		name = "Wise Old Man",
-		description = "Automatically updates your stats on wiseoldman.net when you log out."
-	)
-	default boolean wiseoldman()
+	static void install(Frame frame)
 	{
-		return false;
+		FullScreenUtilities.addFullScreenListenerTo(frame, new OSXFullScreenAdapter(frame));
 	}
 }
