@@ -259,7 +259,6 @@ public class Verzik extends Room
 					verzikFirstEnraged = true;
 				}
 				break;
-			case NpcID.VERZIK_VITUR_8369:
 			case 10830:
 			case 10847:
 				verzikSpawn(npc);
@@ -338,7 +337,6 @@ public class Verzik extends Room
 					verzikLocalTornado = null;
 				}
 				break;
-			case NpcID.VERZIK_VITUR_8369:
 			case NpcID.VERZIK_VITUR_8370:
 			case NpcID.VERZIK_VITUR_8371:
 			case NpcID.VERZIK_VITUR_8372:

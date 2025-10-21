@@ -268,9 +268,7 @@ public class WardenP3SceneOverlay extends Overlay implements PluginLifecycleComp
 
 			final LocalPoint localPoint = projectile.getTarget();
 
-			final Polygon polygon = config.wardenKephriFireballTile() == ToaExtendedConfig.FireballRadius.AERIAL ?
-				Perspective.getCanvasTileAreaPoly(client, localPoint, 3) :
-				Perspective.getCanvasTilePoly(client, localPoint);
+			final Polygon polygon = Perspective.getCanvasTilePoly(client, localPoint);
 
 			if (polygon == null)
 			{

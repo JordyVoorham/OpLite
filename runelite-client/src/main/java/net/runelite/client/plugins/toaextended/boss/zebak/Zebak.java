@@ -80,10 +80,6 @@ public class Zebak implements PluginLifecycleComponent
 	private static final double[] HP_PERCENT_BREAKPOINTS = new double[]{0.85, 0.70, 0.55, 0.40};
 
 	private static final String NPC_NAME = "Zebak";
-	private static final int PROJECTILE_ID_VENOM = 2194;
-	private static final int PROJECTILE_ID_VENOM_SPLASH = 1555;
-	private static final int PROJECTILE_ID_ROCK = 2172;
-	private static final int PROJECTILE_ID_JUG = 2173;
 	private static final int PROJECTILE_ID_MAGIC_ROCK = 2176;
 	private static final int PROJECTILE_ID_MAGIC_ROCK_ENRAGED = 2177;
 	private static final int PROJECTILE_ID_RANGE_ROCK = 2178;
@@ -245,12 +241,6 @@ public class Zebak implements PluginLifecycleComponent
 			case PROJECTILE_ID_RANGE_ROCK_ENRAGED:
 				attackProjectiles.add(new AttackProjectile(Prayer.PROTECT_FROM_MISSILES,
 					ToaUtils.cyclesToTicks(projectile.getRemainingCycles()) + getProjectileTickCount()));
-				break;
-			case PROJECTILE_ID_JUG:
-			case PROJECTILE_ID_ROCK:
-			case PROJECTILE_ID_VENOM:
-			case PROJECTILE_ID_VENOM_SPLASH:
-				arenaProjectiles.add(projectile);
 				break;
 			default:
 				break;

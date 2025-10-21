@@ -192,6 +192,12 @@ public class Kephri implements PluginLifecycleComponent
 	{
 		final Projectile projectile = event.getProjectile();
 
+		// If projectile is already being tracked, do nothing
+		if (fireballProjectiles.contains(projectile))
+		{
+			return;
+		}
+
 		final int id = projectile.getId();
 
 		if (id == PROJECTILE_ID_FIREBALL || id == PROJECTILE_ID_BOMBER_SCARAB)

@@ -91,10 +91,10 @@ public class ExternalPluginClient
 	private <T> T downloadManifest(String name, Class<T> clazz) throws IOException, VerificationException
 	{
 		HttpUrl manifest = pluginHubBase
-			.newBuilder()
-			.addPathSegment("manifest")
-			.addPathSegment(RuneLiteProperties.getPluginHubVersion() + "_" + name + ".js")
-			.build();
+				.newBuilder()
+				.addPathSegment("manifest")
+				.addPathSegment(RuneLiteProperties.getPluginHubVersion().replace("-SNAPSHOT","") + "_" + name + ".js")
+				.build();
 		try (Response res = okHttpClient.newCall(new Request.Builder().url(manifest).build()).execute())
 		{
 			if (res.code() != 200)
